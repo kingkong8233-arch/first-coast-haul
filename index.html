@@ -430,6 +430,47 @@
   .mobilebar svg{width:18px;height:18px}
   @media(min-width:860px){ .mobilebar{display:none} body{padding-bottom:0} }
 
+
+  /* ---------- service detail pages ---------- */
+  .crumbs{display:flex;flex-wrap:wrap;gap:6px 9px;align-items:center;font-size:14.5px;color:var(--ink-soft);margin-bottom:20px}
+  .crumbs a{font-weight:600;text-decoration:none}
+  .crumbs a:hover{text-decoration:underline}
+  .svcpage h1{font-size:clamp(34px,5.4vw,54px);line-height:1;margin:0 0 12px;font-weight:700;text-transform:uppercase}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin:4px 0 36px}
+  .cols{display:grid;gap:22px;margin-bottom:8px}
+  @media(min-width:900px){ .cols{grid-template-columns:1fr 1fr} }
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+  .card h3{font-size:23px;margin:0 0 12px;text-transform:uppercase}
+  .card h3:not(:first-child){margin-top:22px}
+  .card p{margin:0;color:var(--ink-soft)}
+  .ticks{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+  .ticks li{display:flex;gap:10px;align-items:flex-start;font-size:16px}
+  .ticks li::before{content:"✓";color:var(--brand);font-weight:700;flex:none}
+  .howlist{list-style:none;margin:0;padding:0;display:grid;gap:11px;counter-reset:how}
+  .howlist li{display:flex;gap:11px;align-items:flex-start;font-size:16px;color:var(--ink-soft)}
+  .howlist li strong{color:var(--ink)}
+  .howlist li::before{counter-increment:how;content:counter(how);font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:21px;line-height:1.15;color:var(--brand);flex:none}
+  .arealine{color:var(--ink-soft);margin:26px 0 0;max-width:82ch}
+  .related{margin-top:30px}
+  .related h3{font-size:21px;margin:0 0 12px;text-transform:uppercase}
+  .related ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:9px}
+  .related li a{display:inline-block;border:1.5px solid var(--line);background:var(--surface);border-radius:999px;padding:8px 16px;font-weight:600;font-size:15px;color:var(--ink);text-decoration:none}
+  .related li a:hover{border-color:var(--brand);color:var(--brand)}
+  .subcards{list-style:none;margin:0 0 36px;padding:0;display:grid;gap:14px}
+  @media(min-width:700px){ .subcards{grid-template-columns:repeat(2,1fr)} }
+  @media(min-width:1020px){ .subcards{grid-template-columns:repeat(3,1fr)} }
+  .subcards a{display:block;height:100%;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;text-decoration:none;color:var(--ink);box-shadow:var(--shadow)}
+  .subcards a:hover{border-color:var(--brand)}
+  .subcards h3{font-size:22px;margin:0 0 5px;text-transform:uppercase}
+  .subcards p{margin:0 0 9px;color:var(--ink-soft);font-size:15.5px}
+  .subcards .go{font-weight:700;color:var(--brand);font-size:15.5px}
+  .page-cta{background:var(--dark);color:var(--dark-ink);border-radius:var(--radius);padding:30px 24px;text-align:center;margin-top:36px}
+  .page-cta h3{color:#fff;font-size:27px;margin:0 0 6px;text-transform:uppercase}
+  .page-cta p{color:#e2dac6;margin:0 auto 14px;max-width:52ch}
+  .page-cta .tel{font-family:"Barlow Condensed",sans-serif;font-size:clamp(30px,5vw,42px);font-weight:700;color:#ff9a52;text-decoration:none;display:block;margin-bottom:16px}
+  .page-cta .row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+  .svc li a{color:inherit;text-decoration:none}
+  .svc li a:hover{color:var(--brand);text-decoration:underline}
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto}
     .faq summary .plus{transition:none}
@@ -465,26 +506,26 @@
         </button>
         <div class="submenu">
           <div class="sub-group">
-            <a class="sub-cat" href="#services/svc-demolition">Demolition + Disposal</a>
-            <a href="#services/job-interior-demo">Interior Demolition</a>
-            <a href="#services/job-sheds">Shed &amp; Structure Removal</a>
-            <a href="#services/job-concrete">Concrete Removal</a>
-            <a href="#services/svc-demolition">Deck, Fence &amp; Hot Tub Removal</a>
-            <a href="#services/job-construction">Demo Debris Hauling</a>
+            <a class="sub-cat" href="#demolition">Demolition + Disposal</a>
+            <a href="#interior-demolition">Interior Demolition</a>
+            <a href="#shed-removal">Shed &amp; Structure Removal</a>
+            <a href="#concrete-removal">Concrete Removal</a>
+            <a href="#deck-fence-hot-tub-removal">Deck, Fence &amp; Hot Tub Removal</a>
+            <a href="#demo-debris-hauling">Demo Debris Hauling</a>
           </div>
           <div class="sub-group">
-            <a class="sub-cat" href="#services/svc-hauling">Junk Hauling + Cleanouts</a>
-            <a href="#services/job-furniture">Furniture &amp; Appliance Removal</a>
-            <a href="#services/job-mattresses">Mattresses &amp; Single Items</a>
-            <a href="#services/job-garage">Garage &amp; Attic Cleanouts</a>
-            <a href="#services/job-cleanouts">Estate &amp; Foreclosure Cleanouts</a>
-            <a href="#services/job-yard">Construction &amp; Yard Debris</a>
+            <a class="sub-cat" href="#junk-hauling">Junk Hauling + Cleanouts</a>
+            <a href="#furniture-appliance-removal">Furniture &amp; Appliance Removal</a>
+            <a href="#mattresses-single-items">Mattresses &amp; Single Items</a>
+            <a href="#garage-attic-cleanouts">Garage &amp; Attic Cleanouts</a>
+            <a href="#estate-foreclosure-cleanouts">Estate &amp; Foreclosure Cleanouts</a>
+            <a href="#construction-yard-debris">Construction &amp; Yard Debris</a>
           </div>
           <div class="sub-group">
-            <a class="sub-cat" href="#services/svc-tarping">Roof Tarping + Storm Response</a>
-            <a href="#services/job-tarping">Emergency Storm Tarping</a>
-            <a href="#services/svc-tarping">Leak &amp; Missing-Shingle Cover-ups</a>
-            <a href="#services/job-yard">Storm Debris Clearing</a>
+            <a class="sub-cat" href="#roof-tarping">Roof Tarping + Storm Response</a>
+            <a href="#emergency-storm-tarping">Emergency Storm Tarping</a>
+            <a href="#leak-cover-ups">Leak &amp; Missing-Shingle Cover-ups</a>
+            <a href="#storm-debris-clearing">Storm Debris Clearing</a>
           </div>
         </div>
       </div>
@@ -503,40 +544,40 @@
 <nav class="catmenu" aria-label="Service categories">
   <div class="wrap">
     <div class="cat-item" data-menu>
-      <a href="#services/svc-demolition">Demolition + Disposal</a>
+      <a href="#demolition">Demolition + Disposal</a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Show Demolition + Disposal services">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
       </button>
       <div class="cat-sub">
-        <a href="#services/job-interior-demo">Interior Demolition</a>
-        <a href="#services/job-sheds">Shed &amp; Structure Removal</a>
-        <a href="#services/job-concrete">Concrete Removal</a>
-        <a href="#services/svc-demolition">Deck, Fence &amp; Hot Tub Removal</a>
-        <a href="#services/job-construction">Demo Debris Hauling</a>
+        <a href="#interior-demolition">Interior Demolition</a>
+        <a href="#shed-removal">Shed &amp; Structure Removal</a>
+        <a href="#concrete-removal">Concrete Removal</a>
+        <a href="#deck-fence-hot-tub-removal">Deck, Fence &amp; Hot Tub Removal</a>
+        <a href="#demo-debris-hauling">Demo Debris Hauling</a>
       </div>
     </div>
     <div class="cat-item" data-menu>
-      <a href="#services/svc-hauling">Junk Hauling + Cleanouts</a>
+      <a href="#junk-hauling">Junk Hauling + Cleanouts</a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Show Junk Hauling + Cleanouts services">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
       </button>
       <div class="cat-sub">
-        <a href="#services/job-furniture">Furniture &amp; Appliance Removal</a>
-        <a href="#services/job-mattresses">Mattresses &amp; Single Items</a>
-        <a href="#services/job-garage">Garage &amp; Attic Cleanouts</a>
-        <a href="#services/job-cleanouts">Estate &amp; Foreclosure Cleanouts</a>
-        <a href="#services/job-yard">Construction &amp; Yard Debris</a>
+        <a href="#furniture-appliance-removal">Furniture &amp; Appliance Removal</a>
+        <a href="#mattresses-single-items">Mattresses &amp; Single Items</a>
+        <a href="#garage-attic-cleanouts">Garage &amp; Attic Cleanouts</a>
+        <a href="#estate-foreclosure-cleanouts">Estate &amp; Foreclosure Cleanouts</a>
+        <a href="#construction-yard-debris">Construction &amp; Yard Debris</a>
       </div>
     </div>
     <div class="cat-item" data-menu>
-      <a href="#services/svc-tarping">Roof Tarping + Storm Response</a>
+      <a href="#roof-tarping">Roof Tarping + Storm Response</a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Show Roof Tarping + Storm Response services">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
       </button>
       <div class="cat-sub">
-        <a href="#services/job-tarping">Emergency Storm Tarping</a>
-        <a href="#services/svc-tarping">Leak &amp; Missing-Shingle Cover-ups</a>
-        <a href="#services/job-yard">Storm Debris Clearing</a>
+        <a href="#emergency-storm-tarping">Emergency Storm Tarping</a>
+        <a href="#leak-cover-ups">Leak &amp; Missing-Shingle Cover-ups</a>
+        <a href="#storm-debris-clearing">Storm Debris Clearing</a>
       </div>
     </div>
   </div>
@@ -602,13 +643,13 @@
             <h3>Demolition + Disposal</h3>
             <p>Light demolition for homes and small properties — the crew tears it out, loads it and hauls it off in the same job, so you're not left staring at a debris pile.</p>
             <ul>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Interior demolition — kitchens, baths &amp; full gut-outs</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Shed, structure &amp; outbuilding removal</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Concrete removal — driveways, slabs &amp; patios</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Deck, fence &amp; hot tub removal</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>All demo debris loaded &amp; hauled away</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><a href="#interior-demolition">Interior demolition — kitchens, baths &amp; full gut-outs</a></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><a href="#shed-removal">Shed, structure &amp; outbuilding removal</a></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><a href="#concrete-removal">Concrete removal — driveways, slabs &amp; patios</a></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><a href="#deck-fence-hot-tub-removal">Deck, fence &amp; hot tub removal</a></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><a href="#demo-debris-hauling">All demo debris loaded &amp; hauled away</a></li>
             </ul>
-            <a class="more" href="#quote">Get a demolition estimate →</a>
+            <a class="more" href="#demolition">Explore demolition services →</a>
           </div>
         </article>
 
@@ -621,13 +662,13 @@
             <h3>Junk Hauling + Cleanouts</h3>
             <p>You point, we haul. Furniture, cleanouts and debris, loaded from wherever it sits — call or text early in the day for the best shot at a same-day pickup.</p>
             <ul>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Furniture &amp; appliance removal</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Mattresses, hot tubs &amp; single items</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Garage, attic &amp; storage unit cleanouts</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Estate, foreclosure &amp; move-out cleanouts</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Construction &amp; yard debris hauling</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><a href="#furniture-appliance-removal">Furniture &amp; appliance removal</a></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><a href="#mattresses-single-items">Mattresses, hot tubs &amp; single items</a></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><a href="#garage-attic-cleanouts">Garage, attic &amp; storage unit cleanouts</a></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><a href="#estate-foreclosure-cleanouts">Estate, foreclosure &amp; move-out cleanouts</a></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><a href="#construction-yard-debris">Construction &amp; yard debris hauling</a></li>
             </ul>
-            <a class="more" href="#quote">Get a hauling estimate →</a>
+            <a class="more" href="#junk-hauling">Explore hauling &amp; cleanout services →</a>
           </div>
         </article>
 
@@ -640,13 +681,13 @@
             <h3>Roof Tarping + Storm Response</h3>
             <p>Florida storms don't wait for business hours, and neither does roof damage. A crew secures a heavy-duty tarp over the damage to stop the water until permanent repairs can be made.</p>
             <ul>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Emergency storm tarping</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Leak &amp; missing-shingle cover-ups</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><a href="#emergency-storm-tarping">Emergency storm tarping</a></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><a href="#leak-cover-ups">Leak &amp; missing-shingle cover-ups</a></li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Tarps secured with battens, not just laid on</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Fallen limbs &amp; storm debris cleared</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><a href="#storm-debris-clearing">Fallen limbs &amp; storm debris cleared</a></li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Photos of the damage for your records</li>
             </ul>
-            <a class="more" href="#quote">Request storm tarping →</a>
+            <a class="more" href="#roof-tarping">Explore tarping &amp; storm services →</a>
           </div>
         </article>
       </div>
@@ -876,6 +917,1221 @@
   </section>
   </div><!-- /page faq -->
 
+  <!-- ============ PAGE: DEMOLITION (CATEGORY) ============ -->
+  <div class="page" data-page="demolition" data-service-name="Demolition and Disposal" data-service-desc="Light demolition and disposal across Jacksonville and North Florida: interior demolition, shed and structure removal, concrete removal, and deck, fence and hot tub tear-outs, with all debris loaded and hauled away.">
+  <section class="svcpage">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="#services">Services</a> <span aria-hidden="true">›</span> <span>Demolition + Disposal</span></nav>
+      <p class="kicker">Services · Demolition</p>
+      <h1>Demolition + Disposal in Jacksonville &amp; North Florida</h1>
+      <p class="sub">Tearing something out is the messy half of every remodel and cleanup — and the half most people can't finish with a pickup truck and a free Saturday. First Coast Haul matches you with a local demolition crew that handles the whole job: tear-out, loading, hauling and disposal, in one visit. Homeowners starting a remodel, landlords clearing a lot, realtors prepping a dated listing and contractors who need a tear-out crew all start with the same free on-site estimate.</p>
+      <div class="cta-row">
+        <a class="btn btn-call" href="tel:+19045550147">Call (904) 555-0147</a>
+        <a class="btn btn-ghost" href="#quote">Get a free estimate</a>
+      </div>
+      <ul class="subcards">
+        <li><a href="#interior-demolition"><h3>Interior Demolition</h3><p>Kitchens, bathrooms, flooring and full gut-outs, torn out clean before your remodel starts.</p><span class="go">View service →</span></a></li>
+        <li><a href="#shed-removal"><h3>Shed &amp; Structure Removal</h3><p>Sheds, barns, carports and outbuildings taken down and hauled off, pad and all.</p><span class="go">View service →</span></a></li>
+        <li><a href="#concrete-removal"><h3>Concrete Removal</h3><p>Cracked driveways, slabs, patios and sidewalks broken up, loaded and gone.</p><span class="go">View service →</span></a></li>
+        <li><a href="#deck-fence-hot-tub-removal"><h3>Deck, Fence &amp; Hot Tub Removal</h3><p>Rotted decks, leaning fences and dead hot tubs cut up and carried away.</p><span class="go">View service →</span></a></li>
+        <li><a href="#demo-debris-hauling"><h3>Demo Debris Hauling</h3><p>Already tore it out yourself? The crew loads and hauls the pile — no dumpster rental.</p><span class="go">View service →</span></a></li>
+      </ul>
+      <div class="cols">
+        <div class="card">
+          <h3>What's included</h3>
+          <ul class="ticks">
+            <li>Walkthrough and a written price before any work starts</li>
+            <li>Utility shutoffs confirmed before tear-out begins</li>
+            <li>Tear-out, loading and hauling handled in the same job</li>
+            <li>Concrete, metal and clean wood recycled where facilities take them</li>
+            <li>Site left clear and swept when the crew leaves</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>How it works</h3>
+          <ol class="howlist">
+            <li><span><strong>Book the estimate.</strong> Call or text with the address and what needs to come out — photos help the crew plan equipment.</span></li>
+            <li><span><strong>Free on-site estimate.</strong> The crew walks the job, flags permit and utility questions, and gives you the price in writing.</span></li>
+            <li><span><strong>Tear-out day.</strong> The crew demolishes, loads and hauls in one visit, and sweeps the site before leaving.</span></li>
+          </ol>
+          <h3>What affects the price</h3>
+          <p>Demolition pricing turns on material and mass: a wood-frame shed and a reinforced concrete slab are different jobs. Size, thickness, rebar, site access for the truck and equipment, and disposal weight all move the number — which is why the price is set at the free on-site estimate, in writing, before anything comes down.</p>
+        </div>
+      </div>
+      <p class="arealine">Demolition crews cover our full North Florida service area — Jacksonville, Jacksonville Beach, Atlantic Beach, Neptune Beach, Ponte Vedra Beach, Orange Park, Fleming Island, Middleburg, Green Cove Springs, St. Augustine, Palm Coast, Palatka, Fernandina Beach, Yulee, Callahan, Macclenny, Starke and Lake City. <a href="#areas">See the service areas page</a> or text your ZIP to (904) 555-0147 to confirm.</p>
+      <div class="related">
+        <h3>Related services</h3>
+        <ul>
+          <li><a href="#junk-hauling">Junk Hauling + Cleanouts</a></li>
+          <li><a href="#roof-tarping">Roof Tarping + Storm Response</a></li>
+          <li><a href="#services">All services</a></li>
+          <li><a href="#areas">Service areas</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="faq">
+    <div class="wrap">
+      <p class="kicker">Questions</p>
+      <h2>Demolition questions</h2>
+      <details>
+        <summary>Do I need a permit to demolish a shed or structure?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>It depends on the city and the size of the structure — Jacksonville and the surrounding towns set their own rules. The crew matched to your job flags what's needed at the free estimate, and work is scheduled around any permit that applies.</p></div>
+      </details>
+      <details>
+        <summary>What happens to everything you tear out?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>It's loaded and hauled in the same visit — disposal is part of the job, not an add-on. Concrete, scrap metal and clean wood go to recycling where local facilities accept them; the rest goes to licensed disposal.</p></div>
+      </details>
+      <details>
+        <summary>Can you demolish part of a structure and leave the rest?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>Usually, yes — a single room, one wing, or a carport off the side of a house. The estimate walkthrough marks exactly what comes out and what stays protected.</p></div>
+      </details>
+      <div class="page-cta">
+        <h3>Get the tear-out priced</h3>
+        <p>Free on-site estimates across North Florida — the price in writing before any work starts.</p>
+        <a class="tel" href="tel:+19045550147">(904) 555-0147</a>
+        <div class="row">
+          <a class="btn btn-call" href="tel:+19045550147">Call now</a>
+          <a class="btn btn-light" href="#quote">Request a free estimate</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div><!-- /page demolition -->
+
+  <!-- ============ PAGE: JUNK HAULING (CATEGORY) ============ -->
+  <div class="page" data-page="junk-hauling" data-service-name="Junk Hauling and Cleanouts" data-service-desc="Junk hauling and cleanouts across Jacksonville and North Florida: furniture and appliance removal, mattresses and single items, garage, attic, estate and foreclosure cleanouts, and construction and yard debris hauling.">
+  <section class="svcpage">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="#services">Services</a> <span aria-hidden="true">›</span> <span>Junk Hauling + Cleanouts</span></nav>
+      <p class="kicker">Services · Hauling</p>
+      <h1>Junk Hauling + Cleanouts in Jacksonville &amp; North Florida</h1>
+      <p class="sub">This is the "you point, we haul" side of First Coast Haul. A local crew loads your junk from wherever it sits — up the stairs, out of the attic, off the back porch — and it's gone the same visit. Homeowners clearing space, landlords turning rentals, realtors on a listing deadline and families handling an estate all use the same flow: book, get the price on site, watch it leave. Same-day pickup is available when the schedule has an opening, so call or text early in the day.</p>
+      <div class="cta-row">
+        <a class="btn btn-call" href="tel:+19045550147">Call (904) 555-0147</a>
+        <a class="btn btn-ghost" href="#quote">Get a free estimate</a>
+      </div>
+      <ul class="subcards">
+        <li><a href="#furniture-appliance-removal"><h3>Furniture &amp; Appliance Removal</h3><p>Couches, sectionals, fridges, washers and more — carried out from any room, any floor.</p><span class="go">View service →</span></a></li>
+        <li><a href="#mattresses-single-items"><h3>Mattresses &amp; Single Items</h3><p>One mattress, one couch, one appliance. Small jobs are normal jobs here.</p><span class="go">View service →</span></a></li>
+        <li><a href="#garage-attic-cleanouts"><h3>Garage &amp; Attic Cleanouts</h3><p>Years of "I'll deal with it later," sorted and hauled in a single visit.</p><span class="go">View service →</span></a></li>
+        <li><a href="#estate-foreclosure-cleanouts"><h3>Estate &amp; Foreclosure Cleanouts</h3><p>Whole-house clearing for families, landlords and realtors, left broom-clean.</p><span class="go">View service →</span></a></li>
+        <li><a href="#construction-yard-debris"><h3>Construction &amp; Yard Debris</h3><p>Remodel waste, roofing tear-off and storm yard wreckage, loaded and hauled.</p><span class="go">View service →</span></a></li>
+      </ul>
+      <div class="cols">
+        <div class="card">
+          <h3>What's included</h3>
+          <ul class="ticks">
+            <li>Loading from wherever the junk sits — no curbside staging</li>
+            <li>Stairs, tight doorways and long carries handled by the crew</li>
+            <li>Usable items donated and materials recycled where local options exist</li>
+            <li>The space swept before the crew leaves</li>
+            <li>Same-day pickup when the schedule allows</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>How it works</h3>
+          <ol class="howlist">
+            <li><span><strong>Book.</strong> Call or text a photo of the pile, and tell us about stairs or tight access.</span></li>
+            <li><span><strong>Free on-site estimate.</strong> The crew sizes the load and gives you the price before anything is loaded.</span></li>
+            <li><span><strong>Haul day.</strong> Point at what goes — the crew loads it, sweeps up and hauls it away.</span></li>
+          </ol>
+          <h3>What affects the price</h3>
+          <p>Hauling is priced by volume — how much of the truck your load fills — plus weight, stairs and carry distance. A single mattress and a full garage are both fine; the crew confirms the exact price on site before the first item moves, and there's no obligation if you pass.</p>
+        </div>
+      </div>
+      <p class="arealine">Hauling crews run across our full North Florida service area — Jacksonville, Jacksonville Beach, Atlantic Beach, Neptune Beach, Ponte Vedra Beach, Orange Park, Fleming Island, Middleburg, Green Cove Springs, St. Augustine, Palm Coast, Palatka, Fernandina Beach, Yulee, Callahan, Macclenny, Starke and Lake City. <a href="#areas">See the service areas page</a> or text your ZIP to (904) 555-0147 to confirm.</p>
+      <div class="related">
+        <h3>Related services</h3>
+        <ul>
+          <li><a href="#demolition">Demolition + Disposal</a></li>
+          <li><a href="#roof-tarping">Roof Tarping + Storm Response</a></li>
+          <li><a href="#services">All services</a></li>
+          <li><a href="#areas">Service areas</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="faq">
+    <div class="wrap">
+      <p class="kicker">Questions</p>
+      <h2>Junk hauling questions</h2>
+      <details>
+        <summary>Do I have to drag everything to the curb first?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>No — loading from where it sits is the whole point. Tell us about stairs, elevators or a long driveway when you book so the crew plans the carry.</p></div>
+      </details>
+      <details>
+        <summary>How fast can you pick up?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>Same day when there's an opening, otherwise the next available day. Mornings fill first — calling or texting early gives you the best shot at a same-day slot.</p></div>
+      </details>
+      <details>
+        <summary>What won't you haul?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>Paint, chemicals, fuel and other hazardous waste have to go to the county hazardous-waste drop-off. Set those aside and mention them when you book — almost everything else is fair game.</p></div>
+      </details>
+      <div class="page-cta">
+        <h3>Point at it. It's gone.</h3>
+        <p>Free on-site estimates across North Florida, with same-day pickup when available.</p>
+        <a class="tel" href="tel:+19045550147">(904) 555-0147</a>
+        <div class="row">
+          <a class="btn btn-call" href="tel:+19045550147">Call now</a>
+          <a class="btn btn-light" href="#quote">Request a free estimate</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div><!-- /page junk-hauling -->
+
+  <!-- ============ PAGE: ROOF TARPING (CATEGORY) ============ -->
+  <div class="page" data-page="roof-tarping" data-service-name="Roof Tarping and Storm Response" data-service-desc="Emergency roof tarping and storm response across Jacksonville and North Florida: storm tarping with batten-secured heavy-duty tarps, leak and missing-shingle cover-ups, and storm debris clearing.">
+  <section class="svcpage">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="#services">Services</a> <span aria-hidden="true">›</span> <span>Roof Tarping + Storm Response</span></nav>
+      <p class="kicker">Services · Storm response</p>
+      <h1>Roof Tarping + Storm Response in North Florida</h1>
+      <p class="sub">North Florida roofs take the weather first — hurricanes, tropical storms, nor'easters and plain summer downpours. When shingles are gone or a limb comes through, every rain after that is more damage: ceilings, insulation, wiring, mold. First Coast Haul dispatches local crews to get a heavy-duty tarp secured over the damage fast, document it with photos, and clear the debris that's in the way — buying you dry time to line up permanent repairs.</p>
+      <div class="cta-row">
+        <a class="btn btn-call" href="tel:+19045550147">Call (904) 555-0147</a>
+        <a class="btn btn-ghost" href="#quote">Request storm tarping</a>
+      </div>
+      <ul class="subcards">
+        <li><a href="#emergency-storm-tarping"><h3>Emergency Storm Tarping</h3><p>A batten-secured tarp over storm damage, dispatched as fast as conditions safely allow.</p><span class="go">View service →</span></a></li>
+        <li><a href="#leak-cover-ups"><h3>Leak &amp; Missing-Shingle Cover-ups</h3><p>Small damage, covered properly now — before a ceiling stain becomes a ceiling replacement.</p><span class="go">View service →</span></a></li>
+        <li><a href="#storm-debris-clearing"><h3>Storm Debris Clearing</h3><p>Fallen limbs, downed fencing and roof debris cut up, loaded and hauled away.</p><span class="go">View service →</span></a></li>
+      </ul>
+      <div class="cols">
+        <div class="card">
+          <h3>What's included</h3>
+          <ul class="ticks">
+            <li>Damage photographed before and after tarping, for your records</li>
+            <li>Heavy-duty tarps sized to extend past the damaged area</li>
+            <li>Edges secured with battens — never just laid loose or sandbagged</li>
+            <li>Roof debris cleared so the tarp can seal properly</li>
+            <li>An honest read on what the roof needs next</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>How it works</h3>
+          <ol class="howlist">
+            <li><span><strong>Call as soon as it's safe.</strong> Describe the damage — after a storm, tarping calls are dispatched ahead of routine work.</span></li>
+            <li><span><strong>On-site assessment.</strong> The crew photographs the damage, sizes the tarp and gives you the price before going up.</span></li>
+            <li><span><strong>Tarp secured.</strong> Battened down the same visit, with photos of the finished cover for your records or claim.</span></li>
+          </ol>
+          <h3>What affects the price</h3>
+          <p>Tarping is priced by the size of the damaged area, the roof's height and pitch, and how much debris has to come off before a tarp can seal. After a major storm, demand is the other factor — calling early puts you earlier in the dispatch order. The price is confirmed on site before work starts.</p>
+        </div>
+      </div>
+      <p class="arealine">Storm crews cover our full North Florida service area — Jacksonville, Jacksonville Beach, Atlantic Beach, Neptune Beach, Ponte Vedra Beach, Orange Park, Fleming Island, Middleburg, Green Cove Springs, St. Augustine, Palm Coast, Palatka, Fernandina Beach, Yulee, Callahan, Macclenny, Starke and Lake City. <a href="#areas">See the service areas page</a> or text your ZIP to (904) 555-0147 to confirm.</p>
+      <div class="related">
+        <h3>Related services</h3>
+        <ul>
+          <li><a href="#demolition">Demolition + Disposal</a></li>
+          <li><a href="#junk-hauling">Junk Hauling + Cleanouts</a></li>
+          <li><a href="#services">All services</a></li>
+          <li><a href="#areas">Service areas</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="faq">
+    <div class="wrap">
+      <p class="kicker">Questions</p>
+      <h2>Roof tarping questions</h2>
+      <details>
+        <summary>Is a tarp a permanent repair?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>No — it's temporary protection, meant to keep water out for days to weeks while permanent repairs are scheduled. Your crew will tell you plainly what the roof needs next.</p></div>
+      </details>
+      <details>
+        <summary>How long will a secured tarp hold?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>A batten-secured heavy-duty tarp typically holds through weeks of Florida rain and wind. Loose-laid tarps are the ones that end up in the neighbor's yard — which is why ours are fastened down.</p></div>
+      </details>
+      <details>
+        <summary>Do you work with my insurance claim?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>The crew photographs the damage and the finished tarp and gives you the photos for your records — most homeowners file them with their claim. We don't bill your insurer directly; you pay the crew and keep the documentation.</p></div>
+      </details>
+      <div class="page-cta">
+        <h3>Roof open to the sky?</h3>
+        <p>Call now — storm tarping is dispatched ahead of routine work across North Florida.</p>
+        <a class="tel" href="tel:+19045550147">(904) 555-0147</a>
+        <div class="row">
+          <a class="btn btn-call" href="tel:+19045550147">Call now</a>
+          <a class="btn btn-light" href="#quote">Request storm tarping</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div><!-- /page roof-tarping -->
+  <!-- ============ PAGE: INTERIOR DEMOLITION ============ -->
+  <div class="page" data-page="interior-demolition" data-service-name="Interior Demolition" data-service-desc="Interior demolition in Jacksonville and North Florida: kitchen, bathroom and flooring tear-outs and full interior gut-outs before a remodel, with all debris loaded and hauled away.">
+  <section class="svcpage">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="#services">Services</a> <span aria-hidden="true">›</span> <a href="#demolition">Demolition + Disposal</a> <span aria-hidden="true">›</span> <span>Interior Demolition</span></nav>
+      <p class="kicker">Demolition + Disposal</p>
+      <h1>Interior Demolition in Jacksonville &amp; North Florida</h1>
+      <p class="sub">Every remodel starts with a tear-out, and it's the phase that decides whether the rest of the job starts clean or starts behind. Our matched crews strip kitchens, bathrooms and whole interiors down to exactly where your remodel begins — studs, subfloor or a single room — and haul every bit of debris out in the same job. Homeowners mid-renovation, house flippers on a schedule, landlords turning dated units and realtors prepping listings across the First Coast all book interior demolition the same way: a free on-site estimate, a written price, then a clean shell.</p>
+      <div class="cta-row">
+        <a class="btn btn-call" href="tel:+19045550147">Call (904) 555-0147</a>
+        <a class="btn btn-ghost" href="#quote">Get a free estimate</a>
+      </div>
+      <div class="cols">
+        <div class="card">
+          <h3>What's included</h3>
+          <ul class="ticks">
+            <li>Kitchen tear-outs — cabinets, counters, islands and backsplashes</li>
+            <li>Bathroom demo — tile, tubs, showers, vanities and surrounds</li>
+            <li>Flooring removal — tile, hardwood, laminate, vinyl and carpet</li>
+            <li>Non-load-bearing walls, drywall and ceiling tear-out</li>
+            <li>Full interior gut-outs down to the studs</li>
+            <li>All debris loaded and hauled away — space left swept and remodel-ready</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>How it works</h3>
+          <ol class="howlist">
+            <li><span><strong>Book the estimate.</strong> Call or text with the rooms involved — photos of the space help the crew scope it.</span></li>
+            <li><span><strong>Free on-site estimate.</strong> The crew marks the scope room by room, confirms utilities, and prices exactly that work in writing.</span></li>
+            <li><span><strong>Tear-out day.</strong> The crew strips the space, loads the debris and hauls it off, leaving a clean shell for your remodel crew.</span></li>
+          </ol>
+          <h3>What affects the price</h3>
+          <p>Room count and square footage lead, followed by materials: tile and plaster come out slower than drywall, and layered flooring adds labor and disposal weight. Stairs, elevator access and how much is being kept intact around the work all factor in. Your price is set at the free estimate — never guessed over the phone.</p>
+        </div>
+      </div>
+      <p class="arealine">Interior demolition is available across our full North Florida service area — Jacksonville, Jacksonville Beach, Atlantic Beach, Neptune Beach, Ponte Vedra Beach, Orange Park, Fleming Island, Middleburg, Green Cove Springs, St. Augustine, Palm Coast, Palatka, Fernandina Beach, Yulee, Callahan, Macclenny, Starke and Lake City. <a href="#areas">See the service areas page</a> or text your ZIP to (904) 555-0147 to confirm.</p>
+      <div class="related">
+        <h3>Related services</h3>
+        <ul>
+          <li><a href="#demolition">Demolition + Disposal — all services</a></li>
+          <li><a href="#concrete-removal">Concrete Removal</a></li>
+          <li><a href="#demo-debris-hauling">Demo Debris Hauling</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="faq">
+    <div class="wrap">
+      <p class="kicker">Questions</p>
+      <h2>Interior demolition FAQ</h2>
+      <details>
+        <summary>Can you tear out just one room?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>Yes — most interior demolition is exactly that: one kitchen, one bathroom, or the flooring through a few rooms. The estimate prices only the scope you mark out, nothing more.</p></div>
+      </details>
+      <details>
+        <summary>What about plumbing and electrical in the walls?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>Lines have to be shut off and capped before tear-out starts. The crew confirms shutoffs at the estimate and flags anything that needs a licensed plumber or electrician, so demo never starts on a live line.</p></div>
+      </details>
+      <details>
+        <summary>How long does an interior demo take?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>A single bathroom or kitchen is often a day; a full-house gut runs longer. The crew gives you a timeline with the written estimate, so your remodel schedule can be built around it.</p></div>
+      </details>
+      <div class="page-cta">
+        <h3>Ready to open it up?</h3>
+        <p>Free on-site estimates for interior demolition across Jacksonville and North Florida.</p>
+        <a class="tel" href="tel:+19045550147">(904) 555-0147</a>
+        <div class="row">
+          <a class="btn btn-call" href="tel:+19045550147">Call now</a>
+          <a class="btn btn-light" href="#quote">Request a free estimate</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div><!-- /page interior-demolition -->
+
+  <!-- ============ PAGE: SHED & STRUCTURE REMOVAL ============ -->
+  <div class="page" data-page="shed-removal" data-service-name="Shed and Structure Removal" data-service-desc="Shed, barn, carport and outbuilding removal in Jacksonville and North Florida: structures taken down, loaded and hauled away, with the site left clear.">
+  <section class="svcpage">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="#services">Services</a> <span aria-hidden="true">›</span> <a href="#demolition">Demolition + Disposal</a> <span aria-hidden="true">›</span> <span>Shed &amp; Structure Removal</span></nav>
+      <p class="kicker">Demolition + Disposal</p>
+      <h1>Shed &amp; Structure Removal in Jacksonville &amp; North Florida</h1>
+      <p class="sub">Florida weather is hard on outbuildings: roofs rust, floors rot, and one good storm turns a tired shed into a leaning hazard. Our crews take down sheds, barns, carports, gazebos and detached structures of wood, metal or block, load every piece and haul it away — including whatever junk has been stored inside it for a decade. Homeowners reclaiming a yard, landlords clearing a rental lot and realtors fixing a listing's worst photo all start with a free on-site estimate.</p>
+      <div class="cta-row">
+        <a class="btn btn-call" href="tel:+19045550147">Call (904) 555-0147</a>
+        <a class="btn btn-ghost" href="#quote">Get a free estimate</a>
+      </div>
+      <div class="cols">
+        <div class="card">
+          <h3>What's included</h3>
+          <ul class="ticks">
+            <li>Full teardown of sheds, barns, carports and gazebos</li>
+            <li>Contents hauled too — no need to empty it first</li>
+            <li>Roofing, siding, framing and flooring all removed</li>
+            <li>Concrete pads and footings broken up on request</li>
+            <li>Scrap metal recycled where local facilities take it</li>
+            <li>Site raked and cleared when the structure is gone</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>How it works</h3>
+          <ol class="howlist">
+            <li><span><strong>Book the estimate.</strong> Call or text with the address and a photo of the structure if you have one.</span></li>
+            <li><span><strong>Free on-site estimate.</strong> The crew checks size, material, contents and access, flags any permit question, and prices it in writing.</span></li>
+            <li><span><strong>Teardown day.</strong> The structure comes down, gets loaded and hauled in the same visit, and the pad area is left clear.</span></li>
+          </ol>
+          <h3>What affects the price</h3>
+          <p>Size and construction lead: a metal kit shed and a framed barn with a shingle roof are different jobs. What's stored inside, whether the concrete pad goes too, and how close the truck can get all move the price. It's all settled at the free estimate, before anything comes down.</p>
+        </div>
+      </div>
+      <p class="arealine">Shed and structure removal is available across our full North Florida service area — Jacksonville, Jacksonville Beach, Atlantic Beach, Neptune Beach, Ponte Vedra Beach, Orange Park, Fleming Island, Middleburg, Green Cove Springs, St. Augustine, Palm Coast, Palatka, Fernandina Beach, Yulee, Callahan, Macclenny, Starke and Lake City. <a href="#areas">See the service areas page</a> or text your ZIP to (904) 555-0147 to confirm.</p>
+      <div class="related">
+        <h3>Related services</h3>
+        <ul>
+          <li><a href="#demolition">Demolition + Disposal — all services</a></li>
+          <li><a href="#deck-fence-hot-tub-removal">Deck, Fence &amp; Hot Tub Removal</a></li>
+          <li><a href="#demo-debris-hauling">Demo Debris Hauling</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="faq">
+    <div class="wrap">
+      <p class="kicker">Questions</p>
+      <h2>Shed removal FAQ</h2>
+      <details>
+        <summary>Do I need to empty the shed first?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>No. Tell the crew what's inside at the estimate — they'll sort what you want to keep from what gets hauled, and the contents are priced into the same job.</p></div>
+      </details>
+      <details>
+        <summary>Does the concrete pad have to stay?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>Your call. Many homeowners keep a sound pad for the next shed; if you want it gone, the crew breaks it up and hauls it as part of the estimate.</p></div>
+      </details>
+      <details>
+        <summary>How long does a shed removal take?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>Most residential sheds come down and disappear in a single visit. Larger barns or block structures get a timeline with the written estimate.</p></div>
+      </details>
+      <div class="page-cta">
+        <h3>That shed isn't getting younger</h3>
+        <p>Free on-site estimates for structure removal across Jacksonville and North Florida.</p>
+        <a class="tel" href="tel:+19045550147">(904) 555-0147</a>
+        <div class="row">
+          <a class="btn btn-call" href="tel:+19045550147">Call now</a>
+          <a class="btn btn-light" href="#quote">Request a free estimate</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div><!-- /page shed-removal -->
+
+  <!-- ============ PAGE: CONCRETE REMOVAL ============ -->
+  <div class="page" data-page="concrete-removal" data-service-name="Concrete Removal" data-service-desc="Concrete removal in Jacksonville and North Florida: cracked driveways, slabs, patios and sidewalks broken up, loaded and hauled away.">
+  <section class="svcpage">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="#services">Services</a> <span aria-hidden="true">›</span> <a href="#demolition">Demolition + Disposal</a> <span aria-hidden="true">›</span> <span>Concrete Removal</span></nav>
+      <p class="kicker">Demolition + Disposal</p>
+      <h1>Concrete Removal in Jacksonville &amp; North Florida</h1>
+      <p class="sub">North Florida's tree roots and sandy soil are rough on concrete: driveways heave and crack, patios tilt, and old slabs sit exactly where the new project needs to go. Our crews break up and remove driveways, slabs, patios and sidewalks, cut rebar and mesh, and haul every chunk away — most loads go to concrete recycling where local facilities take them. Whether you're re-pouring, extending a driveway or clearing a lot in Jacksonville or anywhere on the First Coast, it starts with a free on-site estimate.</p>
+      <div class="cta-row">
+        <a class="btn btn-call" href="tel:+19045550147">Call (904) 555-0147</a>
+        <a class="btn btn-ghost" href="#quote">Get a free estimate</a>
+      </div>
+      <div class="cols">
+        <div class="card">
+          <h3>What's included</h3>
+          <ul class="ticks">
+            <li>Driveways and parking pads broken up and removed</li>
+            <li>House and shed slabs, patios and pool decks</li>
+            <li>Sidewalks and walkways taken out cleanly</li>
+            <li>Rebar and wire mesh cut and hauled with the load</li>
+            <li>Clean cut lines where remaining concrete stays</li>
+            <li>Sub-base left graded and ready for the next step</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>How it works</h3>
+          <ol class="howlist">
+            <li><span><strong>Book the estimate.</strong> Call or text with the address and roughly what's coming out — driveway, slab, patio.</span></li>
+            <li><span><strong>Free on-site estimate.</strong> The crew measures the area, checks thickness and reinforcement, and prices the job in writing.</span></li>
+            <li><span><strong>Break-up day.</strong> Concrete is broken, loaded and hauled, and the area is left graded — no rubble pile left behind.</span></li>
+          </ol>
+          <h3>What affects the price</h3>
+          <p>Square footage and thickness set the baseline; rebar and heavy mesh add cutting time. Equipment access matters too — a front driveway is quicker than a backyard patio with a narrow gate. Disposal weight is the last factor, and it's all priced at the free estimate before work starts.</p>
+        </div>
+      </div>
+      <p class="arealine">Concrete removal is available across our full North Florida service area — Jacksonville, Jacksonville Beach, Atlantic Beach, Neptune Beach, Ponte Vedra Beach, Orange Park, Fleming Island, Middleburg, Green Cove Springs, St. Augustine, Palm Coast, Palatka, Fernandina Beach, Yulee, Callahan, Macclenny, Starke and Lake City. <a href="#areas">See the service areas page</a> or text your ZIP to (904) 555-0147 to confirm.</p>
+      <div class="related">
+        <h3>Related services</h3>
+        <ul>
+          <li><a href="#demolition">Demolition + Disposal — all services</a></li>
+          <li><a href="#interior-demolition">Interior Demolition</a></li>
+          <li><a href="#demo-debris-hauling">Demo Debris Hauling</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="faq">
+    <div class="wrap">
+      <p class="kicker">Questions</p>
+      <h2>Concrete removal FAQ</h2>
+      <details>
+        <summary>Can you remove just part of a driveway?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>Yes — a cracked section can be cut out cleanly and removed while the rest stays. The crew marks the cut lines with you at the estimate.</p></div>
+      </details>
+      <details>
+        <summary>What happens to the broken concrete?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>It's loaded and hauled in the same job. Where local facilities accept it, broken concrete goes to recycling to be crushed for road base; the rest goes to licensed disposal.</p></div>
+      </details>
+      <details>
+        <summary>How long does a driveway removal take?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>Most residential driveways and slabs are broken up and gone in a day. Thicker commercial-grade pours or tight-access patios can run longer — you'll get a timeline with the estimate.</p></div>
+      </details>
+      <div class="page-cta">
+        <h3>Cracked, heaved or in the way?</h3>
+        <p>Free on-site estimates for concrete removal across Jacksonville and North Florida.</p>
+        <a class="tel" href="tel:+19045550147">(904) 555-0147</a>
+        <div class="row">
+          <a class="btn btn-call" href="tel:+19045550147">Call now</a>
+          <a class="btn btn-light" href="#quote">Request a free estimate</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div><!-- /page concrete-removal -->
+
+  <!-- ============ PAGE: DECK, FENCE & HOT TUB REMOVAL ============ -->
+  <div class="page" data-page="deck-fence-hot-tub-removal" data-service-name="Deck, Fence and Hot Tub Removal" data-service-desc="Deck, fence and hot tub removal in Jacksonville and North Florida: rotted decks, leaning fences and dead hot tubs torn out, cut up and hauled away.">
+  <section class="svcpage">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="#services">Services</a> <span aria-hidden="true">›</span> <a href="#demolition">Demolition + Disposal</a> <span aria-hidden="true">›</span> <span>Deck, Fence &amp; Hot Tub Removal</span></nav>
+      <p class="kicker">Demolition + Disposal</p>
+      <h1>Deck, Fence &amp; Hot Tub Removal in North Florida</h1>
+      <p class="sub">Humidity, termites and storm seasons give North Florida decks and fences a short life — and a hot tub that stopped heating two years ago is just a very heavy planter. Our crews tear out rotted decks and pergolas, pull leaning fences post and footing included, and cut up and remove hot tubs and spas, hauling every board and panel away. Homeowners replacing a fence, landlords fixing a liability and realtors cleaning up a backyard all book it the same way: free estimate, written price, clear yard.</p>
+      <div class="cta-row">
+        <a class="btn btn-call" href="tel:+19045550147">Call (904) 555-0147</a>
+        <a class="btn btn-ghost" href="#quote">Get a free estimate</a>
+      </div>
+      <div class="cols">
+        <div class="card">
+          <h3>What's included</h3>
+          <ul class="ticks">
+            <li>Deck and pergola tear-out, footings removed on request</li>
+            <li>Fence removal — panels, posts and concrete footings</li>
+            <li>Hot tubs and spas cut up and carried out</li>
+            <li>Pool decks, arbors and play structures</li>
+            <li>All lumber and debris loaded and hauled away</li>
+            <li>Yard left clear for the replacement or the listing photos</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>How it works</h3>
+          <ol class="howlist">
+            <li><span><strong>Book the estimate.</strong> Call or text with what needs to go — and for a hot tub, whether it's drained and powered off.</span></li>
+            <li><span><strong>Free on-site estimate.</strong> The crew checks size, footings and the carry-out path, and prices it in writing.</span></li>
+            <li><span><strong>Removal day.</strong> Everything is torn out or cut up, loaded and hauled in one visit.</span></li>
+          </ol>
+          <h3>What affects the price</h3>
+          <p>Deck height and size, how deep the footings sit, fence length and post concrete, and a hot tub's size and exit path — through a gate is quicker than over one. Disposal volume ties it together, and the whole job is priced at the free estimate before work starts.</p>
+        </div>
+      </div>
+      <p class="arealine">Deck, fence and hot tub removal is available across our full North Florida service area — Jacksonville, Jacksonville Beach, Atlantic Beach, Neptune Beach, Ponte Vedra Beach, Orange Park, Fleming Island, Middleburg, Green Cove Springs, St. Augustine, Palm Coast, Palatka, Fernandina Beach, Yulee, Callahan, Macclenny, Starke and Lake City. <a href="#areas">See the service areas page</a> or text your ZIP to (904) 555-0147 to confirm.</p>
+      <div class="related">
+        <h3>Related services</h3>
+        <ul>
+          <li><a href="#demolition">Demolition + Disposal — all services</a></li>
+          <li><a href="#shed-removal">Shed &amp; Structure Removal</a></li>
+          <li><a href="#storm-debris-clearing">Storm Debris Clearing</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="faq">
+    <div class="wrap">
+      <p class="kicker">Questions</p>
+      <h2>Deck, fence &amp; hot tub FAQ</h2>
+      <details>
+        <summary>Does the hot tub need to be drained first?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>Yes — drained, with the power disconnected, before the crew arrives. If you're not sure how to disconnect it, say so when you book and the crew will walk you through what's needed at the estimate.</p></div>
+      </details>
+      <details>
+        <summary>Do you pull fence posts or cut them at the ground?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>Both are options. Pulling posts with their footings leaves a clean line for a new fence; cutting at grade is faster when the ground will be covered anyway. The crew prices your choice at the estimate.</p></div>
+      </details>
+      <details>
+        <summary>Can you take the deck but leave the frame?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>If the frame is sound and you plan to re-deck it, yes — the crew removes boards and railings only. They'll tell you honestly at the estimate if the frame isn't worth keeping.</p></div>
+      </details>
+      <div class="page-cta">
+        <h3>Backyard ready for a reset?</h3>
+        <p>Free on-site estimates for deck, fence and hot tub removal across North Florida.</p>
+        <a class="tel" href="tel:+19045550147">(904) 555-0147</a>
+        <div class="row">
+          <a class="btn btn-call" href="tel:+19045550147">Call now</a>
+          <a class="btn btn-light" href="#quote">Request a free estimate</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div><!-- /page deck-fence-hot-tub-removal -->
+
+  <!-- ============ PAGE: DEMO DEBRIS HAULING ============ -->
+  <div class="page" data-page="demo-debris-hauling" data-service-name="Demo Debris Hauling" data-service-desc="Demolition debris hauling in Jacksonville and North Florida for DIY remodels and contractors: tear-out waste loaded and hauled away, no dumpster rental needed.">
+  <section class="svcpage">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="#services">Services</a> <span aria-hidden="true">›</span> <a href="#demolition">Demolition + Disposal</a> <span aria-hidden="true">›</span> <span>Demo Debris Hauling</span></nav>
+      <p class="kicker">Demolition + Disposal</p>
+      <h1>Demo Debris Hauling in Jacksonville &amp; North Florida</h1>
+      <p class="sub">You did the tear-out yourself — now there's a mountain of drywall, lumber and busted tile where the driveway used to be. Demo debris hauling is the dumpster alternative: no rental sitting in your driveway for a week, no delivery windows, no weight overage surprises. A local crew loads the pile and hauls it, once or on a schedule through your project. DIY remodelers and Jacksonville-area contractors use it to keep job sites clean and neighbors calm.</p>
+      <div class="cta-row">
+        <a class="btn btn-call" href="tel:+19045550147">Call (904) 555-0147</a>
+        <a class="btn btn-ghost" href="#quote">Get a free estimate</a>
+      </div>
+      <div class="cols">
+        <div class="card">
+          <h3>What's included</h3>
+          <ul class="ticks">
+            <li>Drywall, plaster, lumber and flooring loads</li>
+            <li>Cabinets, counters and fixtures from your tear-out</li>
+            <li>Concrete, block and masonry debris</li>
+            <li>Roofing tear-off — shingles, felt and decking</li>
+            <li>Loading from the pile or straight from the room</li>
+            <li>Repeat pickups scheduled during longer projects</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>How it works</h3>
+          <ol class="howlist">
+            <li><span><strong>Book the estimate.</strong> Call or text a photo of the pile and what's in it — mixed debris is fine.</span></li>
+            <li><span><strong>Free on-site estimate.</strong> The crew sizes the load and prices it per load, in writing, before loading.</span></li>
+            <li><span><strong>Load and haul.</strong> The crew loads everything, sweeps the area and hauls it to disposal or recycling.</span></li>
+          </ol>
+          <h3>What affects the price</h3>
+          <p>Volume and weight run this one — concrete and shingles price differently than drywall and lumber. Where the pile sits (driveway vs. backyard) and how many loads or trips the project needs finish the math. Per-load pricing is confirmed at the free estimate, so a project can budget pickups as it goes.</p>
+        </div>
+      </div>
+      <p class="arealine">Demo debris hauling is available across our full North Florida service area — Jacksonville, Jacksonville Beach, Atlantic Beach, Neptune Beach, Ponte Vedra Beach, Orange Park, Fleming Island, Middleburg, Green Cove Springs, St. Augustine, Palm Coast, Palatka, Fernandina Beach, Yulee, Callahan, Macclenny, Starke and Lake City. <a href="#areas">See the service areas page</a> or text your ZIP to (904) 555-0147 to confirm.</p>
+      <div class="related">
+        <h3>Related services</h3>
+        <ul>
+          <li><a href="#demolition">Demolition + Disposal — all services</a></li>
+          <li><a href="#interior-demolition">Interior Demolition</a></li>
+          <li><a href="#construction-yard-debris">Construction &amp; Yard Debris</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="faq">
+    <div class="wrap">
+      <p class="kicker">Questions</p>
+      <h2>Demo debris FAQ</h2>
+      <details>
+        <summary>Do I need to pile the debris up first?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>No — the crew loads from wherever the debris lies, including straight out of the room you tore out. A single accessible pile just makes the visit quicker.</p></div>
+      </details>
+      <details>
+        <summary>Is this better than renting a dumpster?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>For many jobs, yes: no rental period ticking, no delivery or pickup scheduling, no permit questions for a box on the street, and you never load it yourself. For very large projects a dumpster can still win — the crew will tell you honestly at the estimate.</p></div>
+      </details>
+      <details>
+        <summary>Can you pick up more than once during my remodel?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>Yes — recurring pickups are a normal setup for contractors and bigger DIY projects. Set the rhythm at the estimate and call when a load is ready.</p></div>
+      </details>
+      <div class="page-cta">
+        <h3>The pile goes away</h3>
+        <p>Free on-site estimates for debris hauling across Jacksonville and North Florida.</p>
+        <a class="tel" href="tel:+19045550147">(904) 555-0147</a>
+        <div class="row">
+          <a class="btn btn-call" href="tel:+19045550147">Call now</a>
+          <a class="btn btn-light" href="#quote">Request a free estimate</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div><!-- /page demo-debris-hauling -->
+  <!-- ============ PAGE: FURNITURE & APPLIANCE REMOVAL ============ -->
+  <div class="page" data-page="furniture-appliance-removal" data-service-name="Furniture and Appliance Removal" data-service-desc="Furniture and appliance removal in Jacksonville and North Florida: couches, sectionals, fridges, washers, dryers and more, carried out from any room and hauled away.">
+  <section class="svcpage">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="#services">Services</a> <span aria-hidden="true">›</span> <a href="#junk-hauling">Junk Hauling + Cleanouts</a> <span aria-hidden="true">›</span> <span>Furniture &amp; Appliance Removal</span></nav>
+      <p class="kicker">Junk Hauling + Cleanouts</p>
+      <h1>Furniture &amp; Appliance Removal in Jacksonville, FL</h1>
+      <p class="sub">The new couch is coming Thursday and the old sectional is still in the living room. The fridge died with a full freezer. The washer on the second floor hasn't run in a year. Furniture and appliance removal is the everyday work of First Coast Haul: a local crew carries the heavy pieces out from whatever room they're in — stairs, tight turns and all — and hauls them away, often the same day you call. Usable pieces are donated where local charities accept them.</p>
+      <div class="cta-row">
+        <a class="btn btn-call" href="tel:+19045550147">Call (904) 555-0147</a>
+        <a class="btn btn-ghost" href="#quote">Get a free estimate</a>
+      </div>
+      <div class="cols">
+        <div class="card">
+          <h3>What's included</h3>
+          <ul class="ticks">
+            <li>Couches, sectionals, recliners and sleepers</li>
+            <li>Tables, dressers, wardrobes and bed frames</li>
+            <li>Fridges, freezers, stoves and dishwashers</li>
+            <li>Washers, dryers and water heaters</li>
+            <li>Office furniture — desks, cubicles and filing cabinets</li>
+            <li>Carried out from any room or floor, doors and corners handled carefully</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>How it works</h3>
+          <ol class="howlist">
+            <li><span><strong>Book.</strong> Call or text what needs to go — a photo and the floor it's on help the crew plan.</span></li>
+            <li><span><strong>Free on-site estimate.</strong> The crew looks at the pieces and the carry path, and gives the price before anything moves.</span></li>
+            <li><span><strong>Carry-out.</strong> The crew takes it from the room it's in, loads it and hauls it away — you don't lift a corner.</span></li>
+          </ol>
+          <h3>What affects the price</h3>
+          <p>How many pieces and how big they are lead the estimate. Stairs, long carries and oversized items — sleeper sofas and commercial fridges — add time. Whether appliances are already disconnected and drained matters too. The exact price is given on site, before the crew starts.</p>
+        </div>
+      </div>
+      <p class="arealine">Furniture and appliance removal is available across our full North Florida service area — Jacksonville, Jacksonville Beach, Atlantic Beach, Neptune Beach, Ponte Vedra Beach, Orange Park, Fleming Island, Middleburg, Green Cove Springs, St. Augustine, Palm Coast, Palatka, Fernandina Beach, Yulee, Callahan, Macclenny, Starke and Lake City. <a href="#areas">See the service areas page</a> or text your ZIP to (904) 555-0147 to confirm.</p>
+      <div class="related">
+        <h3>Related services</h3>
+        <ul>
+          <li><a href="#junk-hauling">Junk Hauling + Cleanouts — all services</a></li>
+          <li><a href="#mattresses-single-items">Mattresses &amp; Single Items</a></li>
+          <li><a href="#garage-attic-cleanouts">Garage &amp; Attic Cleanouts</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="faq">
+    <div class="wrap">
+      <p class="kicker">Questions</p>
+      <h2>Furniture &amp; appliance FAQ</h2>
+      <details>
+        <summary>Do appliances need to be disconnected first?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>Fridges and freezers should be emptied. For standard hookups — washer hoses, a dryer plug — the crew can usually handle the disconnect at the visit; mention it when you book so they come prepared. Gas lines need a licensed professional.</p></div>
+      </details>
+      <details>
+        <summary>Will you take just one piece?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>Yes — one couch or one fridge is a normal booking. You don't need to fill the truck to schedule a pickup.</p></div>
+      </details>
+      <details>
+        <summary>What happens to furniture that's still in good shape?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>Where local charities and donation centers accept it, usable furniture is dropped off rather than landfilled. The crew will tell you at the estimate what in your load is likely donation-grade.</p></div>
+      </details>
+      <div class="page-cta">
+        <h3>Heavy, awkward, gone</h3>
+        <p>Free on-site estimates for furniture and appliance removal across Jacksonville and North Florida.</p>
+        <a class="tel" href="tel:+19045550147">(904) 555-0147</a>
+        <div class="row">
+          <a class="btn btn-call" href="tel:+19045550147">Call now</a>
+          <a class="btn btn-light" href="#quote">Request a free estimate</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div><!-- /page furniture-appliance-removal -->
+
+  <!-- ============ PAGE: MATTRESSES & SINGLE ITEMS ============ -->
+  <div class="page" data-page="mattresses-single-items" data-service-name="Mattress Removal and Single-Item Pickup" data-service-desc="Mattress removal and single-item junk pickup in Jacksonville and North Florida: one mattress, one couch or one appliance picked up and hauled away, same day when openings allow.">
+  <section class="svcpage">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="#services">Services</a> <span aria-hidden="true">›</span> <a href="#junk-hauling">Junk Hauling + Cleanouts</a> <span aria-hidden="true">›</span> <span>Mattresses &amp; Single Items</span></nav>
+      <p class="kicker">Junk Hauling + Cleanouts</p>
+      <h1>Mattresses &amp; Single Items in Jacksonville &amp; North Florida</h1>
+      <p class="sub">Not every job is a whole house. Sometimes it's one mattress the city won't take, one treadmill that hasn't moved since the last resolution, one couch that won't fit through the new apartment's door. Single-item pickup is built for exactly that: a local crew comes for the one bulky thing, carries it out from the room it's in, and it's gone — same day when the schedule has an opening, anywhere from Jacksonville Beach to Lake City.</p>
+      <div class="cta-row">
+        <a class="btn btn-call" href="tel:+19045550147">Call (904) 555-0147</a>
+        <a class="btn btn-ghost" href="#quote">Get a free estimate</a>
+      </div>
+      <div class="cols">
+        <div class="card">
+          <h3>What's included</h3>
+          <ul class="ticks">
+            <li>Mattresses and box springs, any size, one or several</li>
+            <li>Single couches, recliners and sectionals pieces</li>
+            <li>Single appliances — a fridge, washer, dryer or stove</li>
+            <li>Exercise equipment: treadmills, ellipticals, weight benches</li>
+            <li>Big TVs, pianos handled on a case-by-case basis at the estimate</li>
+            <li>Pickup from the bedroom, garage or any floor — not just the curb</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>How it works</h3>
+          <ol class="howlist">
+            <li><span><strong>Book.</strong> Call or text what the item is and where it sits — a photo settles most questions.</span></li>
+            <li><span><strong>Free on-site estimate.</strong> The crew confirms the price at the door before the item moves.</span></li>
+            <li><span><strong>Carry-out.</strong> The item leaves with the crew — and anything you point at while they're there gets priced on the spot.</span></li>
+          </ol>
+          <h3>What affects the price</h3>
+          <p>For a single item it's simple: the item's size, the floor it's on and the carry distance. Adding a second or third item while the crew is there costs less per piece than separate trips — extras are priced before loading, never after.</p>
+        </div>
+      </div>
+      <p class="arealine">Single-item pickup runs across our full North Florida service area — Jacksonville, Jacksonville Beach, Atlantic Beach, Neptune Beach, Ponte Vedra Beach, Orange Park, Fleming Island, Middleburg, Green Cove Springs, St. Augustine, Palm Coast, Palatka, Fernandina Beach, Yulee, Callahan, Macclenny, Starke and Lake City. <a href="#areas">See the service areas page</a> or text your ZIP to (904) 555-0147 to confirm.</p>
+      <div class="related">
+        <h3>Related services</h3>
+        <ul>
+          <li><a href="#junk-hauling">Junk Hauling + Cleanouts — all services</a></li>
+          <li><a href="#furniture-appliance-removal">Furniture &amp; Appliance Removal</a></li>
+          <li><a href="#estate-foreclosure-cleanouts">Estate &amp; Foreclosure Cleanouts</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="faq">
+    <div class="wrap">
+      <p class="kicker">Questions</p>
+      <h2>Mattress &amp; single-item FAQ</h2>
+      <details>
+        <summary>Do I need to bag or wrap the mattress?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>No — the crew takes it as it sits. If you already have a mattress bag on it, that works too.</p></div>
+      </details>
+      <details>
+        <summary>Can you come today?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>Often, yes — single items slot into the day's route when there's an opening. Call or text early for the best chance, and the crew will confirm the window when they book you.</p></div>
+      </details>
+      <details>
+        <summary>What if I find more things once you're here?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>Point at them. The crew prices anything you add before loading it, and you can pass on any of it — the original item's price doesn't change.</p></div>
+      </details>
+      <div class="page-cta">
+        <h3>Just one thing? Perfect.</h3>
+        <p>Free on-site estimates for single-item pickup across Jacksonville and North Florida.</p>
+        <a class="tel" href="tel:+19045550147">(904) 555-0147</a>
+        <div class="row">
+          <a class="btn btn-call" href="tel:+19045550147">Call now</a>
+          <a class="btn btn-light" href="#quote">Request a free estimate</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div><!-- /page mattresses-single-items -->
+
+  <!-- ============ PAGE: GARAGE & ATTIC CLEANOUTS ============ -->
+  <div class="page" data-page="garage-attic-cleanouts" data-service-name="Garage and Attic Cleanouts" data-service-desc="Garage and attic cleanouts in Jacksonville and North Florida: years of stored clutter sorted, loaded and hauled in one visit, with the space left swept.">
+  <section class="svcpage">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="#services">Services</a> <span aria-hidden="true">›</span> <a href="#junk-hauling">Junk Hauling + Cleanouts</a> <span aria-hidden="true">›</span> <span>Garage &amp; Attic Cleanouts</span></nav>
+      <p class="kicker">Junk Hauling + Cleanouts</p>
+      <h1>Garage &amp; Attic Cleanouts in Jacksonville &amp; North Florida</h1>
+      <p class="sub">The garage hasn't fit a car since the second kid. The attic is a decade of boxes nobody has opened, in Florida heat that makes sorting it yourself a weekend punishment. A cleanout crew changes the math: you walk the space once, point at what stays, and everything else is sorted, carried down or out, loaded and hauled in a single visit — garage left swept, attic left empty, car back where it belongs.</p>
+      <div class="cta-row">
+        <a class="btn btn-call" href="tel:+19045550147">Call (904) 555-0147</a>
+        <a class="btn btn-ghost" href="#quote">Get a free estimate</a>
+      </div>
+      <div class="cols">
+        <div class="card">
+          <h3>What's included</h3>
+          <ul class="ticks">
+            <li>On-site sorting — keep, donate and haul piles, you direct</li>
+            <li>Boxes, bins, shelving and stored furniture</li>
+            <li>Old tools, sports gear, tires and car parts</li>
+            <li>Attic loads carried down, including pull-down stair attics</li>
+            <li>Paint and chemicals set aside for the county hazardous-waste drop-off</li>
+            <li>Floor swept clean when the space is empty</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>How it works</h3>
+          <ol class="howlist">
+            <li><span><strong>Book the estimate.</strong> Call or text with the space involved — garage, attic or both, and roughly how full it is.</span></li>
+            <li><span><strong>Free on-site estimate.</strong> The crew walks the space with you and prices the full cleanout in writing.</span></li>
+            <li><span><strong>Cleanout day.</strong> You call keep or haul; the crew sorts, loads and hauls, and sweeps before leaving.</span></li>
+          </ol>
+          <h3>What affects the price</h3>
+          <p>Volume is the main driver — a half garage and a packed two-car price differently. Attic access (pull-down stairs vs. a full staircase), heavy items like safes and shop equipment, and how much sorting you want done on site all factor in. The price is fixed at the free estimate, before the first box moves.</p>
+        </div>
+      </div>
+      <p class="arealine">Garage and attic cleanouts are available across our full North Florida service area — Jacksonville, Jacksonville Beach, Atlantic Beach, Neptune Beach, Ponte Vedra Beach, Orange Park, Fleming Island, Middleburg, Green Cove Springs, St. Augustine, Palm Coast, Palatka, Fernandina Beach, Yulee, Callahan, Macclenny, Starke and Lake City. <a href="#areas">See the service areas page</a> or text your ZIP to (904) 555-0147 to confirm.</p>
+      <div class="related">
+        <h3>Related services</h3>
+        <ul>
+          <li><a href="#junk-hauling">Junk Hauling + Cleanouts — all services</a></li>
+          <li><a href="#estate-foreclosure-cleanouts">Estate &amp; Foreclosure Cleanouts</a></li>
+          <li><a href="#furniture-appliance-removal">Furniture &amp; Appliance Removal</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="faq">
+    <div class="wrap">
+      <p class="kicker">Questions</p>
+      <h2>Garage &amp; attic cleanout FAQ</h2>
+      <details>
+        <summary>Do I have to sort everything before you come?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>No — sorting with the crew is the normal way it works. If you can mark the obvious keeps ahead of time it speeds things up, but it isn't required.</p></div>
+      </details>
+      <details>
+        <summary>How long does a garage cleanout take?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>Most garages take a few hours; a packed garage plus a full attic can run a full day. The crew gives you a time estimate along with the price at the free estimate.</p></div>
+      </details>
+      <details>
+        <summary>What about the paint cans and old chemicals?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>Those can't go in the truck — they belong at the county hazardous-waste drop-off. The crew sets them aside in one spot and tells you where your county's drop-off is.</p></div>
+      </details>
+      <div class="page-cta">
+        <h3>Park in your garage again</h3>
+        <p>Free on-site estimates for garage and attic cleanouts across Jacksonville and North Florida.</p>
+        <a class="tel" href="tel:+19045550147">(904) 555-0147</a>
+        <div class="row">
+          <a class="btn btn-call" href="tel:+19045550147">Call now</a>
+          <a class="btn btn-light" href="#quote">Request a free estimate</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div><!-- /page garage-attic-cleanouts -->
+
+  <!-- ============ PAGE: ESTATE & FORECLOSURE CLEANOUTS ============ -->
+  <div class="page" data-page="estate-foreclosure-cleanouts" data-service-name="Estate and Foreclosure Cleanouts" data-service-desc="Estate, foreclosure and move-out cleanouts in Jacksonville and North Florida for families, landlords, realtors and property managers: whole-house clearing with a broom-clean finish.">
+  <section class="svcpage">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="#services">Services</a> <span aria-hidden="true">›</span> <a href="#junk-hauling">Junk Hauling + Cleanouts</a> <span aria-hidden="true">›</span> <span>Estate &amp; Foreclosure Cleanouts</span></nav>
+      <p class="kicker">Junk Hauling + Cleanouts</p>
+      <h1>Estate &amp; Foreclosure Cleanouts in North Florida</h1>
+      <p class="sub">Whole-house cleanouts come with deadlines and, often, difficult circumstances. Families settling a loved one's estate, landlords turning a left-behind rental, realtors racing a closing date and property managers clearing foreclosures across Jacksonville and North Florida all need the same thing: the house emptied completely, on schedule, by a crew that treats the property with respect. Items your family flags are set aside untouched; everything else is hauled, and the home is left broom-clean and ready for its next step.</p>
+      <div class="cta-row">
+        <a class="btn btn-call" href="tel:+19045550147">Call (904) 555-0147</a>
+        <a class="btn btn-ghost" href="#quote">Get a free estimate</a>
+      </div>
+      <div class="cols">
+        <div class="card">
+          <h3>What's included</h3>
+          <ul class="ticks">
+            <li>Whole-house furniture and contents removal</li>
+            <li>Garage, attic, shed and yard included in the same job</li>
+            <li>Appliances, mattresses and left-behind tenant belongings</li>
+            <li>Flagged keepsakes and documents set aside, never hauled</li>
+            <li>Photo updates as rooms are cleared, for out-of-area families</li>
+            <li>Broom-clean finish, ready for listing, turnover or closing</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>How it works</h3>
+          <ol class="howlist">
+            <li><span><strong>Book the estimate.</strong> Call or text with the address, the home's size and your deadline — closing and listing dates come first in scheduling.</span></li>
+            <li><span><strong>Free on-site estimate.</strong> The crew walks every room with you (or by phone and photos), flags what's set aside, and prices the full cleanout in writing.</span></li>
+            <li><span><strong>Cleanout days.</strong> The crew clears the property room by room and leaves it broom-clean, on the schedule agreed at the estimate.</span></li>
+          </ol>
+          <h3>What affects the price</h3>
+          <p>The home's size and how full it is drive the price, along with outbuildings, stairs and heavy items. Tight deadlines can require a bigger crew or extra trucks, which the estimate lays out plainly — one written price for the whole property, agreed before work starts.</p>
+        </div>
+      </div>
+      <p class="arealine">Estate and foreclosure cleanouts are available across our full North Florida service area — Jacksonville, Jacksonville Beach, Atlantic Beach, Neptune Beach, Ponte Vedra Beach, Orange Park, Fleming Island, Middleburg, Green Cove Springs, St. Augustine, Palm Coast, Palatka, Fernandina Beach, Yulee, Callahan, Macclenny, Starke and Lake City. <a href="#areas">See the service areas page</a> or text your ZIP to (904) 555-0147 to confirm.</p>
+      <div class="related">
+        <h3>Related services</h3>
+        <ul>
+          <li><a href="#junk-hauling">Junk Hauling + Cleanouts — all services</a></li>
+          <li><a href="#garage-attic-cleanouts">Garage &amp; Attic Cleanouts</a></li>
+          <li><a href="#furniture-appliance-removal">Furniture &amp; Appliance Removal</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="faq">
+    <div class="wrap">
+      <p class="kicker">Questions</p>
+      <h2>Estate &amp; foreclosure cleanout FAQ</h2>
+      <details>
+        <summary>Can you work to a closing or listing deadline?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>Yes — tell us the date when you book. Cleanouts with a hard deadline get scheduling priority, and the estimate includes the timeline the crew will work to.</p></div>
+      </details>
+      <details>
+        <summary>I'm out of state. Can this be handled without me there?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>Yes. Many estate cleanouts are coordinated by phone: the crew walks the property with photos, confirms what to set aside, and sends progress photos as rooms are cleared.</p></div>
+      </details>
+      <details>
+        <summary>What if we find important papers or valuables during the cleanout?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>Crews are briefed to set aside documents, photos and anything that looks like a keepsake or valuable, and to check with you before hauling anything questionable. Flag specific items at the estimate and they're treated as untouchable.</p></div>
+      </details>
+      <div class="page-cta">
+        <h3>A whole house, handled</h3>
+        <p>Free on-site estimates for estate and foreclosure cleanouts across North Florida.</p>
+        <a class="tel" href="tel:+19045550147">(904) 555-0147</a>
+        <div class="row">
+          <a class="btn btn-call" href="tel:+19045550147">Call now</a>
+          <a class="btn btn-light" href="#quote">Request a free estimate</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div><!-- /page estate-foreclosure-cleanouts -->
+
+  <!-- ============ PAGE: CONSTRUCTION & YARD DEBRIS ============ -->
+  <div class="page" data-page="construction-yard-debris" data-service-name="Construction and Yard Debris Removal" data-service-desc="Construction debris and yard debris removal in Jacksonville and North Florida: drywall, lumber, roofing, branches and fencing loaded and hauled away.">
+  <section class="svcpage">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="#services">Services</a> <span aria-hidden="true">›</span> <a href="#junk-hauling">Junk Hauling + Cleanouts</a> <span aria-hidden="true">›</span> <span>Construction &amp; Yard Debris</span></nav>
+      <p class="kicker">Junk Hauling + Cleanouts</p>
+      <h1>Construction &amp; Yard Debris in Jacksonville &amp; North Florida</h1>
+      <p class="sub">Remodels and Florida yards produce the same problem in two flavors: piles. Drywall offcuts, torn-out cabinets and roofing tear-off on one side; branches, palm fronds, old fencing and landscaping waste on the other. Our crews load and haul both — for contractors keeping a job site clean, DIYers mid-project, and homeowners whose yard debris pile has outgrown the city's pickup rules. One load or a standing pickup through the whole project.</p>
+      <div class="cta-row">
+        <a class="btn btn-call" href="tel:+19045550147">Call (904) 555-0147</a>
+        <a class="btn btn-ghost" href="#quote">Get a free estimate</a>
+      </div>
+      <div class="cols">
+        <div class="card">
+          <h3>What's included</h3>
+          <ul class="ticks">
+            <li>Drywall, lumber, tile and flooring waste</li>
+            <li>Roofing debris — shingles, felt and torn-off decking</li>
+            <li>Cabinets, countertops and fixtures from remodels</li>
+            <li>Branches, palm fronds, fencing and landscaping waste</li>
+            <li>Dirt, sod and rock piles, priced by weight</li>
+            <li>Repeat pickups scheduled during ongoing projects</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>How it works</h3>
+          <ol class="howlist">
+            <li><span><strong>Book the estimate.</strong> Call or text a photo of the pile and what's in it — mixed loads are fine.</span></li>
+            <li><span><strong>Free on-site estimate.</strong> The crew sizes the load and prices it per load, in writing.</span></li>
+            <li><span><strong>Load and haul.</strong> Everything is loaded, the area swept, and the debris hauled to disposal or recycling.</span></li>
+          </ol>
+          <h3>What affects the price</h3>
+          <p>Volume and weight lead: a load of shingles and a load of branches are priced differently. Where the pile sits, how mixed the materials are, and whether you need one pickup or a series through a project round it out. Per-load pricing is confirmed at the free estimate, so projects can budget debris as they go.</p>
+        </div>
+      </div>
+      <p class="arealine">Construction and yard debris removal is available across our full North Florida service area — Jacksonville, Jacksonville Beach, Atlantic Beach, Neptune Beach, Ponte Vedra Beach, Orange Park, Fleming Island, Middleburg, Green Cove Springs, St. Augustine, Palm Coast, Palatka, Fernandina Beach, Yulee, Callahan, Macclenny, Starke and Lake City. <a href="#areas">See the service areas page</a> or text your ZIP to (904) 555-0147 to confirm.</p>
+      <div class="related">
+        <h3>Related services</h3>
+        <ul>
+          <li><a href="#junk-hauling">Junk Hauling + Cleanouts — all services</a></li>
+          <li><a href="#demo-debris-hauling">Demo Debris Hauling</a></li>
+          <li><a href="#storm-debris-clearing">Storm Debris Clearing</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="faq">
+    <div class="wrap">
+      <p class="kicker">Questions</p>
+      <h2>Construction &amp; yard debris FAQ</h2>
+      <details>
+        <summary>Can you pick up during an ongoing remodel, not just at the end?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>Yes — scheduled mid-project pickups are how most contractors use this service. Set the rhythm at the estimate and call when a load is ready.</p></div>
+      </details>
+      <details>
+        <summary>Do you take dirt and concrete too?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>Yes. Heavy materials like dirt, sod and broken concrete are priced by weight rather than volume — the crew confirms the rate at the estimate.</p></div>
+      </details>
+      <details>
+        <summary>My yard debris is from a storm. Is this the right service?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>For ground debris, yes — and if limbs are on the roof or the roof itself is damaged, start with <a href="#storm-debris-clearing">storm debris clearing</a> and <a href="#emergency-storm-tarping">emergency tarping</a> so the house is protected first.</p></div>
+      </details>
+      <div class="page-cta">
+        <h3>Keep the site clean</h3>
+        <p>Free on-site estimates for debris removal across Jacksonville and North Florida.</p>
+        <a class="tel" href="tel:+19045550147">(904) 555-0147</a>
+        <div class="row">
+          <a class="btn btn-call" href="tel:+19045550147">Call now</a>
+          <a class="btn btn-light" href="#quote">Request a free estimate</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div><!-- /page construction-yard-debris -->
+  <!-- ============ PAGE: EMERGENCY STORM TARPING ============ -->
+  <div class="page" data-page="emergency-storm-tarping" data-service-name="Emergency Storm Tarping" data-service-desc="Emergency roof tarping in Jacksonville and North Florida: heavy-duty tarps secured with battens over storm-damaged roofs to stop leaks fast.">
+  <section class="svcpage">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="#services">Services</a> <span aria-hidden="true">›</span> <a href="#roof-tarping">Roof Tarping + Storm Response</a> <span aria-hidden="true">›</span> <span>Emergency Storm Tarping</span></nav>
+      <p class="kicker">Roof Tarping + Storm Response</p>
+      <h1>Emergency Storm Tarping in Jacksonville &amp; North Florida</h1>
+      <p class="sub">When a storm takes shingles off — or puts a limb through the roof — the damage doesn't stop when the wind does. Every rain after that soaks insulation, ceilings and walls, and a small repair turns into a mold problem. Emergency storm tarping is the fastest way to stop it: a local crew dispatches as soon as conditions safely allow, photographs the damage, and secures a heavy-duty tarp with battens over the opening. Call or text the moment it's safe to do so — after a North Florida storm, the dispatch list fills in order.</p>
+      <div class="cta-row">
+        <a class="btn btn-call" href="tel:+19045550147">Call (904) 555-0147</a>
+        <a class="btn btn-ghost" href="#quote">Request storm tarping</a>
+      </div>
+      <div class="cols">
+        <div class="card">
+          <h3>What's included</h3>
+          <ul class="ticks">
+            <li>Damage photographed before and after, for your records and claim</li>
+            <li>Heavy-duty tarp sized to extend well past the damaged area</li>
+            <li>Edges secured with wooden battens — never loose-laid or sandbagged</li>
+            <li>Limbs and debris on the roof cleared so the tarp can seal</li>
+            <li>Interior leak points identified from the roof side</li>
+            <li>An honest read on what permanent repair the roof needs next</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>How it works</h3>
+          <ol class="howlist">
+            <li><span><strong>Call or text as soon as it's safe.</strong> Describe the damage — tarping calls jump the line after a storm.</span></li>
+            <li><span><strong>On-site assessment.</strong> The crew photographs the damage, sizes the tarp and confirms the price before going up.</span></li>
+            <li><span><strong>Tarp secured the same visit.</strong> Battened down tight, with finished photos handed to you for your records.</span></li>
+          </ol>
+          <h3>What affects the price</h3>
+          <p>The size of the damaged area sets the tarp size; the roof's height, stories and pitch set how the crew works on it. Debris that has to come off the roof first, and post-storm demand across North Florida, factor in as well. The price is confirmed on site before work starts — even in an emergency, you approve it first.</p>
+        </div>
+      </div>
+      <p class="arealine">Emergency tarping crews cover our full North Florida service area — Jacksonville, Jacksonville Beach, Atlantic Beach, Neptune Beach, Ponte Vedra Beach, Orange Park, Fleming Island, Middleburg, Green Cove Springs, St. Augustine, Palm Coast, Palatka, Fernandina Beach, Yulee, Callahan, Macclenny, Starke and Lake City. <a href="#areas">See the service areas page</a> or text your ZIP to (904) 555-0147 to confirm.</p>
+      <div class="related">
+        <h3>Related services</h3>
+        <ul>
+          <li><a href="#roof-tarping">Roof Tarping + Storm Response — all services</a></li>
+          <li><a href="#leak-cover-ups">Leak &amp; Missing-Shingle Cover-ups</a></li>
+          <li><a href="#storm-debris-clearing">Storm Debris Clearing</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="faq">
+    <div class="wrap">
+      <p class="kicker">Questions</p>
+      <h2>Emergency tarping FAQ</h2>
+      <details>
+        <summary>How fast can you get here after a storm?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>Crews dispatch as soon as conditions safely allow — nobody tarps a roof in a lightning storm. Calls are worked in the order they come in, so calling or texting early puts you earlier in line.</p></div>
+      </details>
+      <details>
+        <summary>Is the tarp a permanent fix?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>No — it's temporary protection that keeps water out for days to weeks while you schedule permanent repairs. The crew will tell you plainly what the roof needs next so you can get a roofer lined up.</p></div>
+      </details>
+      <details>
+        <summary>Will you document the damage for my insurance claim?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>Yes — the crew photographs the damage before tarping and the finished cover after, and the photos are yours for your records and claim. You pay the crew directly; we don't bill insurers.</p></div>
+      </details>
+      <div class="page-cta">
+        <h3>Water coming in? Call now.</h3>
+        <p>Storm tarping is dispatched ahead of routine work across North Florida.</p>
+        <a class="tel" href="tel:+19045550147">(904) 555-0147</a>
+        <div class="row">
+          <a class="btn btn-call" href="tel:+19045550147">Call now</a>
+          <a class="btn btn-light" href="#quote">Request storm tarping</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div><!-- /page emergency-storm-tarping -->
+
+  <!-- ============ PAGE: LEAK & MISSING-SHINGLE COVER-UPS ============ -->
+  <div class="page" data-page="leak-cover-ups" data-service-name="Roof Leak and Missing-Shingle Cover-ups" data-service-desc="Roof leak cover-ups in Jacksonville and North Florida: missing shingles and small damaged patches sealed under a secured tarp until permanent repairs are made.">
+  <section class="svcpage">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="#services">Services</a> <span aria-hidden="true">›</span> <a href="#roof-tarping">Roof Tarping + Storm Response</a> <span aria-hidden="true">›</span> <span>Leak &amp; Missing-Shingle Cover-ups</span></nav>
+      <p class="kicker">Roof Tarping + Storm Response</p>
+      <h1>Leak &amp; Missing-Shingle Cover-ups in North Florida</h1>
+      <p class="sub">Not every roof problem arrives with a hurricane. A few shingles in the yard after a windy night, a brown stain spreading on the bedroom ceiling, a drip in the attic — small damage, leaking a little more with every afternoon downpour. A cover-up seals the patch properly: a tarp cut to the damaged area and secured with battens, so a minor leak doesn't become ceiling drywall, insulation and mold work while you wait on a roofer's schedule.</p>
+      <div class="cta-row">
+        <a class="btn btn-call" href="tel:+19045550147">Call (904) 555-0147</a>
+        <a class="btn btn-ghost" href="#quote">Get a free estimate</a>
+      </div>
+      <div class="cols">
+        <div class="card">
+          <h3>What's included</h3>
+          <ul class="ticks">
+            <li>The damaged or missing-shingle area located and photographed</li>
+            <li>Cover sized to the patch and secured with battens</li>
+            <li>The rest of the roof checked for lifted or missing shingles while the crew is up there</li>
+            <li>Photos of the roof's condition for your records</li>
+            <li>A straight answer on whether you're looking at a repair or a bigger conversation</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>How it works</h3>
+          <ol class="howlist">
+            <li><span><strong>Book.</strong> Call or text with where the leak shows inside — that helps the crew find the entry point above it.</span></li>
+            <li><span><strong>Free on-site estimate.</strong> The crew inspects the area, photographs what they find and prices the cover-up before starting.</span></li>
+            <li><span><strong>Cover secured.</strong> The patch is sealed the same visit, and you get the photos and the crew's read on next steps.</span></li>
+          </ol>
+          <h3>What affects the price</h3>
+          <p>Cover-ups are among the smaller jobs we run: price turns on the patch size, the roof's pitch and height, and safe access to the damaged area. It's confirmed at the free on-site estimate, before any work begins.</p>
+        </div>
+      </div>
+      <p class="arealine">Leak cover-ups are available across our full North Florida service area — Jacksonville, Jacksonville Beach, Atlantic Beach, Neptune Beach, Ponte Vedra Beach, Orange Park, Fleming Island, Middleburg, Green Cove Springs, St. Augustine, Palm Coast, Palatka, Fernandina Beach, Yulee, Callahan, Macclenny, Starke and Lake City. <a href="#areas">See the service areas page</a> or text your ZIP to (904) 555-0147 to confirm.</p>
+      <div class="related">
+        <h3>Related services</h3>
+        <ul>
+          <li><a href="#roof-tarping">Roof Tarping + Storm Response — all services</a></li>
+          <li><a href="#emergency-storm-tarping">Emergency Storm Tarping</a></li>
+          <li><a href="#storm-debris-clearing">Storm Debris Clearing</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="faq">
+    <div class="wrap">
+      <p class="kicker">Questions</p>
+      <h2>Leak cover-up FAQ</h2>
+      <details>
+        <summary>My leak is small. Is a cover-up overkill?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>Usually the opposite: a secured cover costs a fraction of replacing water-stained ceiling drywall, wet insulation and the mold treatment that can follow. Small leaks rarely stay small through a Florida rainy season.</p></div>
+      </details>
+      <details>
+        <summary>Can you just replace the missing shingles instead?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>Permanent shingle work is a roofer's job — our crews handle temporary protection. The crew photographs the damage and tells you what they see, so your roofer starts with the full picture.</p></div>
+      </details>
+      <details>
+        <summary>How long will a cover-up hold?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>A batten-secured cover typically holds for days to weeks — long enough to get permanent repairs scheduled without rushing into the first available bid.</p></div>
+      </details>
+      <div class="page-cta">
+        <h3>Stop the drip before the ceiling</h3>
+        <p>Free on-site estimates for leak cover-ups across Jacksonville and North Florida.</p>
+        <a class="tel" href="tel:+19045550147">(904) 555-0147</a>
+        <div class="row">
+          <a class="btn btn-call" href="tel:+19045550147">Call now</a>
+          <a class="btn btn-light" href="#quote">Request a free estimate</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div><!-- /page leak-cover-ups -->
+
+  <!-- ============ PAGE: STORM DEBRIS CLEARING ============ -->
+  <div class="page" data-page="storm-debris-clearing" data-service-name="Storm Debris Clearing" data-service-desc="Storm debris clearing in Jacksonville and North Florida: fallen limbs, downed fencing and storm wreckage cut up, loaded and hauled away after storms.">
+  <section class="svcpage">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="#services">Services</a> <span aria-hidden="true">›</span> <a href="#roof-tarping">Roof Tarping + Storm Response</a> <span aria-hidden="true">›</span> <span>Storm Debris Clearing</span></nav>
+      <p class="kicker">Roof Tarping + Storm Response</p>
+      <h1>Storm Debris Clearing in Jacksonville &amp; North Florida</h1>
+      <p class="sub">The storm passes, and the yard is a different place: limbs across the driveway, a fence line down, shingles and wreckage in every bed. County pickup after a big storm can take weeks — and the car still needs to get out today. Storm debris crews cut fallen limbs to loadable lengths, clear debris off roofs so tarping can happen, stack nothing and leave nothing: everything is loaded and hauled to licensed disposal, and your property is usable again the same visit.</p>
+      <div class="cta-row">
+        <a class="btn btn-call" href="tel:+19045550147">Call (904) 555-0147</a>
+        <a class="btn btn-ghost" href="#quote">Get a free estimate</a>
+      </div>
+      <div class="cols">
+        <div class="card">
+          <h3>What's included</h3>
+          <ul class="ticks">
+            <li>Fallen limbs and branches cut up and hauled</li>
+            <li>Debris cleared off roofs, so tarping can be done</li>
+            <li>Downed fence sections and storm wreckage removed</li>
+            <li>Driveway and yard access restored first</li>
+            <li>Shingles, siding and scattered debris gathered and loaded</li>
+            <li>Everything hauled to licensed disposal — nothing left in piles</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>How it works</h3>
+          <ol class="howlist">
+            <li><span><strong>Book.</strong> Call or text once it's safe — photos of the yard help the crew bring the right equipment.</span></li>
+            <li><span><strong>Free on-site estimate.</strong> The crew walks the property, sizes the loads and prices the clearing in writing.</span></li>
+            <li><span><strong>Clearing day.</strong> Debris is cut, loaded and hauled, with driveway and access cleared first.</span></li>
+          </ol>
+          <h3>What affects the price</h3>
+          <p>Total volume leads, then limb size — big oak limbs need chainsaw time before they load. Debris on a roof prices differently from debris on the ground, and post-storm demand across North Florida affects scheduling. The full price is set at the free estimate before cutting starts.</p>
+        </div>
+      </div>
+      <p class="arealine">Storm debris clearing is available across our full North Florida service area — Jacksonville, Jacksonville Beach, Atlantic Beach, Neptune Beach, Ponte Vedra Beach, Orange Park, Fleming Island, Middleburg, Green Cove Springs, St. Augustine, Palm Coast, Palatka, Fernandina Beach, Yulee, Callahan, Macclenny, Starke and Lake City. <a href="#areas">See the service areas page</a> or text your ZIP to (904) 555-0147 to confirm.</p>
+      <div class="related">
+        <h3>Related services</h3>
+        <ul>
+          <li><a href="#roof-tarping">Roof Tarping + Storm Response — all services</a></li>
+          <li><a href="#emergency-storm-tarping">Emergency Storm Tarping</a></li>
+          <li><a href="#construction-yard-debris">Construction &amp; Yard Debris</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="faq">
+    <div class="wrap">
+      <p class="kicker">Questions</p>
+      <h2>Storm debris FAQ</h2>
+      <details>
+        <summary>Won't the county pick up storm debris for free?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>After declared storm events, usually — but collection can take weeks and requires debris cut and stacked to their spec at the curb. Private clearing is the fast option: cut, loaded and gone in one visit, with your driveway usable the same day.</p></div>
+      </details>
+      <details>
+        <summary>Can you clear limbs off the roof too?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>Yes — roof debris comes off as part of the job, and if the roof underneath is damaged, the crew can move straight to <a href="#emergency-storm-tarping">emergency tarping</a> in the same visit.</p></div>
+      </details>
+      <details>
+        <summary>Do you cut up large limbs, or do I need a tree service first?<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a"><p>Fallen limbs are cut to loadable lengths by the crew. Standing trees that need to come down are a tree service's work — the crew will tell you at the estimate if that's what you're looking at.</p></div>
+      </details>
+      <div class="page-cta">
+        <h3>Get your yard back</h3>
+        <p>Free on-site estimates for storm debris clearing across Jacksonville and North Florida.</p>
+        <a class="tel" href="tel:+19045550147">(904) 555-0147</a>
+        <div class="row">
+          <a class="btn btn-call" href="tel:+19045550147">Call now</a>
+          <a class="btn btn-light" href="#quote">Request a free estimate</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div><!-- /page storm-debris-clearing -->
+
 </main>
 
 <footer class="site">
@@ -888,9 +2144,14 @@
     <div>
       <h3>Services</h3>
       <ul>
-        <li><a href="#services/svc-demolition">Demolition + disposal in North Florida</a></li>
-        <li><a href="#services/svc-hauling">Junk hauling in Jacksonville &amp; the First Coast</a></li>
-        <li><a href="#services/svc-tarping">Roof tarping + storm response</a></li>
+        <li><a href="#demolition">Demolition + Disposal in North Florida</a></li>
+        <li><a href="#interior-demolition">Interior demolition in Jacksonville</a></li>
+        <li><a href="#concrete-removal">Concrete removal</a></li>
+        <li><a href="#junk-hauling">Junk hauling in Jacksonville &amp; the First Coast</a></li>
+        <li><a href="#furniture-appliance-removal">Furniture &amp; appliance removal</a></li>
+        <li><a href="#garage-attic-cleanouts">Garage &amp; attic cleanouts</a></li>
+        <li><a href="#roof-tarping">Roof tarping + storm response</a></li>
+        <li><a href="#emergency-storm-tarping">Emergency storm tarping</a></li>
         <li><a href="#areas">Service areas — 18 North Florida towns</a></li>
         <li><a href="#quote">Free estimates</a></li>
       </ul>
@@ -933,7 +2194,18 @@
     var routes = {
       '': 'home', '#top': 'home', '#home': 'home',
       '#services': 'services', '#how': 'how', '#quote': 'quote',
-      '#areas': 'areas', '#faq': 'faq'
+      '#areas': 'areas', '#faq': 'faq',
+      '#demolition': 'demolition', '#junk-hauling': 'junk-hauling', '#roof-tarping': 'roof-tarping',
+      '#interior-demolition': 'interior-demolition', '#shed-removal': 'shed-removal',
+      '#concrete-removal': 'concrete-removal', '#deck-fence-hot-tub-removal': 'deck-fence-hot-tub-removal',
+      '#demo-debris-hauling': 'demo-debris-hauling',
+      '#furniture-appliance-removal': 'furniture-appliance-removal',
+      '#mattresses-single-items': 'mattresses-single-items',
+      '#garage-attic-cleanouts': 'garage-attic-cleanouts',
+      '#estate-foreclosure-cleanouts': 'estate-foreclosure-cleanouts',
+      '#construction-yard-debris': 'construction-yard-debris',
+      '#emergency-storm-tarping': 'emergency-storm-tarping',
+      '#leak-cover-ups': 'leak-cover-ups', '#storm-debris-clearing': 'storm-debris-clearing'
     };
     var titles = {
       home: 'Junk Removal, Demolition & Roof Tarping in Jacksonville, FL | First Coast Haul',
@@ -941,8 +2213,89 @@
       how: 'How It Works — Free Estimates in Jacksonville & North Florida | First Coast Haul',
       quote: 'Get a Free Estimate — Junk Removal, Demolition & Tarping in North Florida | First Coast Haul',
       areas: 'Service Areas — Junk Removal, Demolition & Tarping Across North Florida | First Coast Haul',
-      faq: 'FAQs — Junk Removal, Demolition & Roof Tarping in Jacksonville & North Florida | First Coast Haul'
+      faq: 'FAQs — Junk Removal, Demolition & Roof Tarping in Jacksonville & North Florida | First Coast Haul',
+      'demolition': 'Demolition Services in Jacksonville & North Florida — Interior Demo, Shed & Concrete Removal | First Coast Haul',
+      'junk-hauling': 'Junk Removal & Cleanouts in Jacksonville, FL — Hauling Services | First Coast Haul',
+      'roof-tarping': 'Emergency Roof Tarping & Storm Response in North Florida | First Coast Haul',
+      'interior-demolition': 'Interior Demolition in Jacksonville, FL — Kitchen, Bath & Gut-Outs | First Coast Haul',
+      'shed-removal': 'Shed & Structure Removal in Jacksonville, FL | First Coast Haul',
+      'concrete-removal': 'Concrete Removal in Jacksonville, FL — Driveways, Slabs & Patios | First Coast Haul',
+      'deck-fence-hot-tub-removal': 'Deck, Fence & Hot Tub Removal in Jacksonville, FL | First Coast Haul',
+      'demo-debris-hauling': 'Demolition Debris Hauling in Jacksonville, FL | First Coast Haul',
+      'furniture-appliance-removal': 'Furniture & Appliance Removal in Jacksonville, FL | First Coast Haul',
+      'mattresses-single-items': 'Mattress Removal & Single-Item Pickup in Jacksonville, FL | First Coast Haul',
+      'garage-attic-cleanouts': 'Garage & Attic Cleanouts in Jacksonville, FL | First Coast Haul',
+      'estate-foreclosure-cleanouts': 'Estate & Foreclosure Cleanouts in Jacksonville & North Florida | First Coast Haul',
+      'construction-yard-debris': 'Construction & Yard Debris Removal in Jacksonville, FL | First Coast Haul',
+      'emergency-storm-tarping': 'Emergency Roof Tarping in Jacksonville, FL — Storm Response | First Coast Haul',
+      'leak-cover-ups': 'Roof Leak & Missing-Shingle Cover-ups in North Florida | First Coast Haul',
+      'storm-debris-clearing': 'Storm Debris Clearing in Jacksonville & North Florida | First Coast Haul'
     };
+    var descriptions = {
+      'demolition': 'Light demolition in Jacksonville and North Florida: interior demolition, shed and structure removal, concrete removal, and deck, fence and hot tub tear-outs — debris hauled away. Free on-site estimates. Call (904) 555-0147.',
+      'junk-hauling': 'Junk removal and hauling in Jacksonville and North Florida: furniture and appliance removal, mattresses, garage and estate cleanouts, construction and yard debris. Same-day pickup when available. Free estimates — call (904) 555-0147.',
+      'roof-tarping': 'Emergency roof tarping across Jacksonville and North Florida after storms: heavy-duty tarps secured with battens, leak cover-ups and storm debris clearing. Call or text (904) 555-0147.',
+      'interior-demolition': 'Interior demolition in Jacksonville and North Florida: kitchens, bathrooms, flooring and full gut-outs before a remodel, with debris hauled away. Free on-site estimates — (904) 555-0147.',
+      'shed-removal': 'Shed, barn, carport and outbuilding removal in Jacksonville and North Florida — taken down, loaded and hauled away, site left clear. Free estimates — call (904) 555-0147.',
+      'concrete-removal': 'Concrete removal in Jacksonville and North Florida: cracked driveways, slabs, patios and sidewalks broken up and hauled away. Free on-site estimates — (904) 555-0147.',
+      'deck-fence-hot-tub-removal': 'Deck, fence and hot tub removal in Jacksonville and North Florida — torn out, cut up and hauled away, yard left clear. Free estimates — call (904) 555-0147.',
+      'demo-debris-hauling': 'Demo debris hauling in Jacksonville and North Florida for DIY remodels and contractors — tear-out waste loaded and hauled, no dumpster rental needed. Free estimates — (904) 555-0147.',
+      'furniture-appliance-removal': 'Furniture and appliance removal in Jacksonville and North Florida: couches, sectionals, fridges, washers and more, carried out from any room. Same-day pickup when available — (904) 555-0147.',
+      'mattresses-single-items': 'Mattress removal and single-item junk pickup in Jacksonville and North Florida — one mattress, one couch, one appliance, gone today when openings allow. Call (904) 555-0147.',
+      'garage-attic-cleanouts': 'Garage and attic cleanouts in Jacksonville and North Florida — years of clutter sorted, loaded and hauled in one visit, space left swept. Free estimates — (904) 555-0147.',
+      'estate-foreclosure-cleanouts': 'Estate, foreclosure and move-out cleanouts in Jacksonville and North Florida for families, landlords, realtors and property managers — whole-house clearing, broom-clean finish. (904) 555-0147.',
+      'construction-yard-debris': 'Construction debris and yard debris removal in Jacksonville and North Florida — drywall, lumber, roofing, branches and fencing loaded and hauled. Free estimates — (904) 555-0147.',
+      'emergency-storm-tarping': 'Emergency storm tarping in Jacksonville and North Florida — heavy-duty tarps secured with battens over storm-damaged roofs to stop leaks fast. Call or text (904) 555-0147.',
+      'leak-cover-ups': 'Roof leak and missing-shingle cover-ups in Jacksonville and North Florida — small damaged patches sealed under a secured tarp until your roofer comes. Call (904) 555-0147.',
+      'storm-debris-clearing': 'Storm debris clearing in Jacksonville and North Florida — fallen limbs, downed fencing and wreckage cut up, loaded and hauled after storms. Call (904) 555-0147.'
+    };
+    var serviceRoutes = {
+      'demolition': 1, 'junk-hauling': 1, 'roof-tarping': 1,
+      'interior-demolition': 1, 'shed-removal': 1, 'concrete-removal': 1,
+      'deck-fence-hot-tub-removal': 1, 'demo-debris-hauling': 1,
+      'furniture-appliance-removal': 1, 'mattresses-single-items': 1,
+      'garage-attic-cleanouts': 1, 'estate-foreclosure-cleanouts': 1,
+      'construction-yard-debris': 1, 'emergency-storm-tarping': 1,
+      'leak-cover-ups': 1, 'storm-debris-clearing': 1
+    };
+    var descEl = document.querySelector('meta[name="description"]');
+    var defaultDesc = descEl ? descEl.getAttribute('content') : '';
+
+    function setSchema(route) {
+      var prev = document.getElementById('page-jsonld');
+      if (prev) prev.parentNode.removeChild(prev);
+      var page = document.querySelector('.page[data-page="' + route + '"]');
+      if (!page) return;
+      var sName = page.getAttribute('data-service-name');
+      if (!sName) return;
+      var graph = [{
+        '@type': 'Service',
+        'name': sName,
+        'description': page.getAttribute('data-service-desc') || '',
+        'provider': { '@type': 'LocalBusiness', 'name': 'First Coast Haul', 'telephone': '+1-904-555-0147', 'email': 'quotes@firstcoasthaul.com' },
+        'areaServed': 'North Florida'
+      }];
+      var faqs = [];
+      var dets = page.querySelectorAll('.faq details');
+      for (var i = 0; i < dets.length; i++) {
+        var sum = dets[i].querySelector('summary');
+        var ans = dets[i].querySelector('.a p');
+        if (sum && ans && sum.childNodes.length) {
+          faqs.push({
+            '@type': 'Question',
+            'name': sum.childNodes[0].textContent.replace(/\s+/g, ' ').trim(),
+            'acceptedAnswer': { '@type': 'Answer', 'text': ans.textContent.replace(/\s+/g, ' ').trim() }
+          });
+        }
+      }
+      if (faqs.length) graph.push({ '@type': 'FAQPage', 'mainEntity': faqs });
+      var s = document.createElement('script');
+      s.type = 'application/ld+json';
+      s.id = 'page-jsonld';
+      s.textContent = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
+      document.head.appendChild(s);
+    }
+
     function showPage() {
       var hash = window.location.hash;
       var anchor = null;
@@ -957,15 +2310,18 @@
       for (var i = 0; i < pages.length; i++) {
         pages[i].classList.toggle('active', pages[i].getAttribute('data-page') === route);
       }
+      var navRoute = serviceRoutes[route] ? 'services' : route;
       var links = document.querySelectorAll('[data-route-link]');
       for (var j = 0; j < links.length; j++) {
-        if (links[j].getAttribute('data-route-link') === route) {
+        if (links[j].getAttribute('data-route-link') === navRoute) {
           links[j].setAttribute('aria-current', 'page');
         } else {
           links[j].removeAttribute('aria-current');
         }
       }
       document.title = titles[route];
+      if (descEl) descEl.setAttribute('content', descriptions[route] || defaultDesc);
+      setSchema(route);
       if (anchor) {
         var target = document.getElementById(anchor);
         if (target) { target.scrollIntoView(); return; }
