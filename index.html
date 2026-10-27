@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="color-scheme" content="light dark" />
+<meta name="color-scheme" content="light" />
 <link rel="icon" href="data:," />
 <title>Junk Removal in Jacksonville, FL | First Coast Haul</title>
 <meta name="description" content="Junk removal, demolition &amp; emergency roof tarping in Jacksonville &amp; North Florida. Free on-site estimates, same-day pickup when available. Call (904) 555-0147." />
@@ -70,6 +70,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root{
+    color-scheme: light;
     --bg:#f7f4ee;
     --surface:#ffffff;
     --surface-2:#efe9dd;
@@ -85,23 +86,6 @@
     --dark-ink:#f5efe3;
     --radius:10px;
     --shadow:0 10px 30px rgba(28,26,22,.10);
-  }
-  @media (prefers-color-scheme: dark){
-    :root{
-      --bg:#171410;
-      --surface:#221e18;
-      --surface-2:#2a251d;
-      --ink:#f2ecdf;
-      --ink-soft:#c9bfa9;
-      --line:#3d362a;
-      --brand:#f0732a;
-      --brand-bright:#f0732a;
-      --accent:#7cc4a4;
-      --accent-soft:#22382e;
-      --dark:#100e0b;
-      --dark-ink:#f5efe3;
-      --shadow:0 10px 30px rgba(0,0,0,.45);
-    }
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -301,7 +285,6 @@
     background:var(--accent-soft);color:var(--accent);padding:5px 11px;border-radius:999px;
   }
   .svc .badge.hot{background:#fde8d7;color:#9a3412}
-  @media (prefers-color-scheme: dark){ .svc .badge.hot{background:#40260f;color:#ffb37c} }
   .svc p{margin:0;color:var(--ink-soft)}
   .svc ul{margin:2px 0 6px;padding:0;list-style:none;display:grid;gap:7px}
   .svc li{display:flex;gap:9px;align-items:flex-start;font-size:16px}
@@ -339,7 +322,6 @@
 
   /* quote form band */
   .quoteband{background:var(--accent);color:#f2f7f3}
-  @media (prefers-color-scheme: dark){ .quoteband{background:#173528} }
   .quoteband .wrap{display:grid;gap:30px}
   .quoteband h2{color:#fff}
   .quoteband .sub{color:#d7e9dd}
@@ -408,14 +390,15 @@
 
   /* footer */
   footer.site{background:var(--dark);color:#cfc6b0;border-top:1px solid #37312a;font-size:15px}
-  footer.site .wrap{display:grid;gap:26px;padding-top:42px;padding-bottom:30px}
+  footer.site > .wrap{display:grid;gap:26px;padding-top:42px;padding-bottom:30px}
+  .foot-bottom .wrap{text-align:center;line-height:1.6}
   footer.site h3{color:#f5efe3;font-size:19px;margin:0 0 10px;text-transform:uppercase}
   footer.site p,footer.site li{margin:0 0 6px}
   footer.site ul{list-style:none;margin:0;padding:0}
   footer.site a{color:#ffb37c;text-decoration:none}
   footer.site a:hover{text-decoration:underline}
   .foot-bottom{border-top:1px solid #37312a;padding:16px 0;font-size:13.5px;color:#9b927d}
-  @media(min-width:860px){ footer.site .wrap{grid-template-columns:1.3fr 1fr 1fr 1fr} }
+  @media(min-width:860px){ footer.site > .wrap{grid-template-columns:1.3fr 1fr 1fr 1fr} }
 
   /* sticky mobile bar */
   .mobilebar{
