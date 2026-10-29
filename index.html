@@ -14,7 +14,6 @@
 <title>Junk Removal in Pensacola, FL | First Coast Haul</title>
 <meta name="description" content="Junk removal, demolition &amp; emergency roof tarping in Pensacola &amp; Northwest Florida. Free on-site estimates, same-day pickup when available. Call (850) 555-0147." />
 <link rel="canonical" href="https://firstcoasthaul.vercel.app/" />
-<meta name="keywords" content="junk removal Pensacola FL, junk removal near me, junk hauling Pensacola FL, Pensacola area junk removal, demolition contractor Pensacola FL, interior demolition Pensacola FL, shed removal, structure removal, concrete removal, furniture removal, garage cleanout, estate cleanout, construction debris removal, same day junk pickup, emergency roof tarping Florida, storm roof tarp" />
 <meta name="robots" content="index, follow" />
 <meta name="geo.region" content="US-FL" />
 <meta name="geo.placename" content="Pensacola, Florida" />
@@ -33,13 +32,18 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "HomeAndConstructionBusiness",
+  "@id": "https://firstcoasthaul.vercel.app/#business",
   "name": "First Coast Haul",
+  "url": "https://firstcoasthaul.vercel.app/",
+  "image": "https://firstcoasthaul.vercel.app/assets/junk.webp",
+  "logo": "https://firstcoasthaul.vercel.app/assets/icon-512.png",
   "description": "Demolition, junk hauling and emergency roof tarping across Northwest Florida: interior demolition, structure and shed removal, concrete removal, furniture and appliance removal, garage and estate cleanouts, construction debris hauling and storm roof tarping. Free on-site estimates, same-day pickup when available.",
   "telephone": "+1-850-555-0147",
   "email": "info@xyz.com",
   "priceRange": "$$",
   "openingHours": "Mo-Su 07:00-19:00",
+  "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "07:00", "closes": "19:00" },
   "areaServed": ["Pensacola","Pensacola Beach","Gulf Breeze","Navarre","Perdido Key","Milton","Pace","Cantonment","Warrington","Bellview","Ensley","Molino","West Pensacola","Midway","Bagdad","Jay","Century","Ferry Pass"],
   "address": { "@type": "PostalAddress", "addressLocality": "Pensacola", "addressRegion": "FL", "addressCountry": "US" },
   "geo": { "@type": "GeoCoordinates", "latitude": 30.4213, "longitude": -87.2169 },
@@ -191,7 +195,7 @@
     --ink:#1c1a16;
     --ink-soft:#4c463c;
     --line:#ddd3c0;
-    --brand:#c2410c;         /* safety orange, darkened for contrast */
+    --brand:#b53a09;         /* safety orange, darkened for AA contrast on cream/tan */
     --brand-bright:#ea580c;
     --brand-ink:#ffffff;
     --accent:#1e4d3b;        /* deep pine green */
@@ -243,7 +247,7 @@
     padding:12px 22px;border-radius:8px;line-height:1.1;
   }
   .btn-call{background:var(--brand);color:var(--brand-ink)}
-  .btn-call:hover{background:var(--brand-bright)}
+  .btn-call:hover{background:#9a3412}
   .btn-ghost{background:transparent;color:var(--ink);border:2px solid var(--ink)}
   .btn-ghost:hover{border-color:var(--brand);color:var(--brand)}
   .btn-light{background:#fff;color:#1c1a16}
@@ -331,7 +335,17 @@
     .hero-ctas .btn{font-size:16px;padding:12px 20px}
   }
   @media(min-width:860px){
-    nav.main{display:flex;order:0;width:auto;padding-top:0;border-top:0;gap:26px}
+    header.site .wrap{flex-wrap:nowrap;gap:10px 20px}
+    .logo{flex:none}
+    nav.main{display:flex;order:0;width:auto;padding-top:0;border-top:0;gap:20px;align-items:center;flex:none}
+    header.site .btn.header-call{flex:none;order:1}
+  }
+  @media(min-width:860px) and (max-width:1080px){
+    header.site .wrap{gap:10px 14px}
+    nav.main{gap:13px}
+    nav.main a{font-size:15px}
+    .logo .name{font-size:22px}
+    header.site .btn.header-call{padding:10px 14px;font-size:14.5px}
   }
 
   /* ---------- dropdown menus ---------- */
@@ -675,6 +689,28 @@
   .page-cta .row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
   .svc li a{color:inherit;text-decoration:none}
   .svc li a:hover{color:var(--brand);text-decoration:underline}
+
+  /* ---------- audit fixes: heading hierarchy, skip link, focus, tap targets ---------- */
+  h1.page-h1{font-size:clamp(30px,4.4vw,44px);line-height:1.02;margin:0 0 12px;font-weight:700;text-transform:uppercase}
+  .quoteband h1.page-h1{color:#fff}
+  .card h2,.related h2,.subcards h2,.steps h2,.page-cta h2{line-height:1.55}
+  .card h2{font-size:23px;margin:0 0 12px;text-transform:uppercase}
+  .card h2:not(:first-child){margin-top:22px}
+  .related h2{font-size:21px;margin:0 0 12px;text-transform:uppercase}
+  .subcards h2{font-size:22px;margin:0 0 5px;text-transform:uppercase}
+  .steps h2{font-size:23px;margin:0 0 6px;text-transform:uppercase}
+  .svc h2{font-size:27px;margin:0;text-transform:uppercase;line-height:1}
+  .page-cta h2{color:#fff;font-size:27px;margin:0 0 6px;text-transform:uppercase}
+  .skip-link{
+    position:absolute;left:14px;top:-70px;z-index:200;background:var(--dark);color:#fff;
+    padding:11px 18px;border-radius:8px;font-weight:700;text-decoration:none;transition:top .18s ease;
+  }
+  .skip-link:focus{top:12px;color:#fff}
+  :focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+  @media(max-width:859px){
+    .cat-item .menu-toggle{width:44px;height:44px;justify-content:center;margin-left:0}
+    .cat-item > a{padding-top:11px;padding-bottom:11px}
+  }
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto}
     .faq summary .plus{transition:none}
@@ -684,6 +720,7 @@
 </style>
 </head>
 <body>
+<a class="skip-link" href="#top">Skip to main content</a>
 
 <header class="site">
   <div class="wrap">
@@ -789,7 +826,7 @@
   </div>
 </nav>
 
-<main id="top">
+<main id="top" tabindex="-1">
 
   <!-- ============ PAGE: HOME (hero only) ============ -->
   <div class="page active" data-page="home">
@@ -836,14 +873,14 @@
   <section id="services">
     <div class="wrap">
       <p class="kicker">What we do</p>
-      <h2>Demolition, junk hauling &amp; roof tarping in Pensacola, FL</h2>
+      <h1 class="page-h1">Demolition, junk hauling &amp; roof tarping in Pensacola, FL</h1>
       <p class="sub">Demolition, junk hauling and roof tarping in Pensacola, FL, grouped the way the jobs actually come in. You make one call and we match you with a local Northwest Florida crew that does the work — and hauls the mess away with it.</p>
 
       <div class="svc">
         <article id="svc-demolition">
           <div class="body">
             <span class="badge">Tear-out &amp; removal</span>
-            <h3>Demolition + Disposal</h3>
+            <h2>Demolition + Disposal</h2>
             <p>Light demolition for homes and small properties — the crew tears it out, loads it and hauls it off in the same job, so you're not left staring at a debris pile.</p>
             <ul>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><a href="/interior-demolition">Interior demolition — kitchens, baths &amp; full gut-outs</a></li>
@@ -859,7 +896,7 @@
         <article id="svc-hauling">
           <div class="body">
             <span class="badge hot">Same-day pickup when available</span>
-            <h3>Junk Hauling + Cleanouts</h3>
+            <h2>Junk Hauling + Cleanouts</h2>
             <p>You point, we haul. Furniture, cleanouts and debris, loaded from wherever it sits — call or text early in the day for the best shot at a same-day pickup.</p>
             <ul>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><a href="/furniture-appliance-removal">Furniture &amp; appliance removal</a></li>
@@ -875,7 +912,7 @@
         <article id="svc-tarping">
           <div class="body">
             <span class="badge hot">Emergency storm response</span>
-            <h3>Roof Tarping + Storm Response</h3>
+            <h2>Roof Tarping + Storm Response</h2>
             <p>Florida storms don't wait for business hours, and neither does roof damage. A crew secures a heavy-duty tarp over the damage to stop the water until permanent repairs can be made.</p>
             <ul>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><a href="/emergency-storm-tarping">Emergency storm tarping</a></li>
@@ -925,22 +962,22 @@
   <section id="how">
     <div class="wrap">
       <p class="kicker">How it works</p>
-      <h2>How junk removal &amp; demolition works</h2>
+      <h1 class="page-h1">How junk removal &amp; demolition works</h1>
       <p class="sub">Three steps, no runaround — the same flow whether it's one couch, a kitchen tear-out or a roof that needs tarping tonight. Here is how junk removal and demolition works with First Coast Haul, start to finish — booking, the free estimate, and the haul-away.</p>
       <div class="steps">
         <div class="step">
           <span class="num">01</span>
-          <h3>Call or text to book</h3>
+          <h2>Call or text to book</h2>
           <p>Call or text <a href="tel:+18505550147">(850) 555-0147</a> with your address and a good time to come by. Photos of the job help us plan but are optional — and if a storm just came through, say so: tarping calls jump the line.</p>
         </div>
         <div class="step">
           <span class="num">02</span>
-          <h3>Free on-site estimate</h3>
+          <h2>Free on-site estimate</h2>
           <p>A local crew comes out, looks at the job and gives you the price on site, in writing, before any work starts. The estimate is free and there's no obligation.</p>
         </div>
         <div class="step">
           <span class="num">03</span>
-          <h3>The crew does the heavy work</h3>
+          <h2>The crew does the heavy work</h2>
           <p>If the price works for you, the crew gets started — everything loaded, hauled away, and the space swept up before they leave.</p>
         </div>
       </div>
@@ -956,7 +993,7 @@
     <div class="wrap">
       <div>
         <p class="kicker" style="color:#ffb37c">Free estimate</p>
-        <h2>Free estimate for junk removal in Pensacola, FL — demolition &amp; roof tarping too</h2>
+        <h1 class="page-h1">Free estimate for junk removal in Pensacola, FL — demolition &amp; roof tarping too</h1>
         <p class="sub">Get a free estimate for junk removal in Pensacola, FL right here — this is where every junk removal quote in Pensacola, FL starts: fill this in and we'll turn it into a ready-to-send text or email — or skip the form and just call or text a photo of the job. The same form covers a demolition free estimate or quote and a roof tarping quote or free estimate. Roof leaking after a storm? Call now — tarping is the emergency run.</p>
         <ul class="chips">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>No obligation</li>
@@ -970,7 +1007,7 @@
             <input type="text" name="name" autocomplete="name" placeholder="Jane Smith" required />
           </label>
           <label>Your phone
-            <input type="tel" name="phone" autocomplete="tel" placeholder="(850) 000-0000" required />
+            <input type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="(850) 000-0000" required />
           </label>
         </div>
         <div class="formrow">
@@ -988,7 +1025,7 @@
             </select>
           </label>
           <label>City / ZIP
-            <input type="text" name="city" autocomplete="address-level2" placeholder="Pensacola, 32210" required />
+            <input type="text" name="city" autocomplete="address-level2" placeholder="Pensacola, 32503" required />
           </label>
         </div>
         <label>About the job
@@ -1012,7 +1049,7 @@
   <section class="areas" id="areas">
     <div class="wrap">
       <p class="kicker">Where we work</p>
-      <h2>Junk Removal in Escambia County &amp; Northwest Florida</h2>
+      <h1 class="page-h1">Junk Removal in Escambia County &amp; Northwest Florida</h1>
       <p class="sub">Junk removal in Escambia County is based in Pensacola and works across the Pensacola area — covering Escambia County and Santa Rosa County, and the same crews run junk hauling and work as your demolition contractor across Northwest Florida in the towns below. That includes junk removal in Milton, FL, Warrington, FL and Perdido Key, FL, plus Pensacola neighborhoods like East Hill, Cordova Park, Scenic Heights, Myrtle Grove and Brent. If you're nearby and don't see yours, text your ZIP code and we'll tell you if we can get there.</p>
       <ul>
         <li class="core">Pensacola</li>
@@ -1053,7 +1090,7 @@
   <section class="faq" id="faq">
     <div class="wrap">
       <p class="kicker">Questions</p>
-      <h2>Junk Removal FAQ — Pensacola, FL</h2>
+      <h1 class="page-h1">Junk Removal FAQ — Pensacola, FL</h1>
       <p class="sub">This junk removal FAQ for Pensacola, FL gives straight answers to what Northwest Florida homeowners ask us most — about demolition, hauling and tarping alike. First Coast Haul connects you with local partner crews — your estimate and the work itself are handled by the contractor matched to your job.</p>
       <details>
         <summary>What items do junk removal companies take?<span class="plus" aria-hidden="true">+</span></summary>
@@ -1151,15 +1188,15 @@
     </div>
     <div class="wrap">
       <ul class="subcards">
-        <li><a href="/interior-demolition"><h3>Interior Demolition</h3><p>Kitchens, bathrooms, flooring and full gut-outs, torn out clean before your remodel starts.</p><span class="go">View service →</span></a></li>
-        <li><a href="/shed-removal"><h3>Shed &amp; Structure Removal</h3><p>Sheds, barns, carports and outbuildings taken down and hauled off, pad and all.</p><span class="go">View service →</span></a></li>
-        <li><a href="/concrete-removal"><h3>Concrete Removal</h3><p>Cracked driveways, slabs, patios and sidewalks broken up, loaded and gone.</p><span class="go">View service →</span></a></li>
-        <li><a href="/deck-fence-hot-tub-removal"><h3>Deck, Fence &amp; Hot Tub Removal</h3><p>Rotted decks, leaning fences and dead hot tubs cut up and carried away.</p><span class="go">View service →</span></a></li>
-        <li><a href="/demo-debris-hauling"><h3>Demo Debris Hauling</h3><p>Already tore it out yourself? The crew loads and hauls the pile — no dumpster rental.</p><span class="go">View service →</span></a></li>
+        <li><a href="/interior-demolition"><h2>Interior Demolition</h2><p>Kitchens, bathrooms, flooring and full gut-outs, torn out clean before your remodel starts.</p><span class="go">View service →</span></a></li>
+        <li><a href="/shed-removal"><h2>Shed &amp; Structure Removal</h2><p>Sheds, barns, carports and outbuildings taken down and hauled off, pad and all.</p><span class="go">View service →</span></a></li>
+        <li><a href="/concrete-removal"><h2>Concrete Removal</h2><p>Cracked driveways, slabs, patios and sidewalks broken up, loaded and gone.</p><span class="go">View service →</span></a></li>
+        <li><a href="/deck-fence-hot-tub-removal"><h2>Deck, Fence &amp; Hot Tub Removal</h2><p>Rotted decks, leaning fences and dead hot tubs cut up and carried away.</p><span class="go">View service →</span></a></li>
+        <li><a href="/demo-debris-hauling"><h2>Demo Debris Hauling</h2><p>Already tore it out yourself? The crew loads and hauls the pile — no dumpster rental.</p><span class="go">View service →</span></a></li>
       </ul>
       <div class="cols">
         <div class="card">
-          <h3>What's included</h3>
+          <h2>What's included</h2>
           <ul class="ticks">
             <li>Walkthrough and a written price before any work starts</li>
             <li>Utility shutoffs confirmed before tear-out begins</li>
@@ -1174,19 +1211,19 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How it works</h3>
+          <h2>How it works</h2>
           <ol class="howlist">
             <li><span><strong>Book the estimate.</strong> Call or text with the address and what needs to come out — photos help the crew plan equipment.</span></li>
             <li><span><strong>Free on-site estimate.</strong> The crew walks the job, flags permit and utility questions, and gives you the price in writing.</span></li>
             <li><span><strong>Tear-out day.</strong> The crew demolishes, loads and hauls in one visit, and sweeps the site before leaving.</span></li>
           </ol>
-          <h3>What affects the price</h3>
+          <h2>What affects the price</h2>
           <p>Demolition pricing turns on material and mass: a wood-frame shed and a reinforced concrete slab are different jobs. Size, thickness, rebar, site access for the truck and equipment, and disposal weight all move the number — which is why the price is set at the free on-site estimate, in writing, before anything comes down.</p>
         </div>
       </div>
       <p class="arealine">Demolition crews cover our full Northwest Florida service area — Pensacola, Pensacola Beach, Gulf Breeze, Navarre, Perdido Key, Milton, Ferry Pass, Pace, Cantonment, Warrington, Bellview, Ensley, Molino, West Pensacola, Midway, Bagdad, Century and Jay. <a href="/areas">See the service areas page</a> or text your ZIP to (850) 555-0147 to confirm.</p>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/junk-hauling">Junk Hauling + Cleanouts</a></li>
           <li><a href="/roof-tarping">Roof Tarping + Storm Response</a></li>
@@ -1209,7 +1246,7 @@
         <div class="a"><p>Usually, yes — a single room, one wing, or a carport off the side of a house. The estimate walkthrough marks exactly what comes out and what stays protected.</p></div>
       </details>
       <div class="page-cta">
-        <h3>Get the tear-out priced</h3>
+        <h2>Get the tear-out priced</h2>
         <p>Free on-site estimates across Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -1239,15 +1276,15 @@
     </div>
     <div class="wrap">
       <ul class="subcards">
-        <li><a href="/furniture-appliance-removal"><h3>Furniture &amp; Appliance Removal</h3><p>Couches, sectionals, fridges, washers and more — carried out from any room, any floor.</p><span class="go">View service →</span></a></li>
-        <li><a href="/mattresses-single-items"><h3>Mattresses &amp; Single Items</h3><p>One mattress, one couch, one appliance. Small jobs are normal jobs here.</p><span class="go">View service →</span></a></li>
-        <li><a href="/garage-attic-cleanouts"><h3>Garage &amp; Attic Cleanouts</h3><p>Years of "I'll deal with it later," sorted and hauled in a single visit.</p><span class="go">View service →</span></a></li>
-        <li><a href="/estate-foreclosure-cleanouts"><h3>Estate &amp; Foreclosure Cleanouts</h3><p>Whole-house clearing for families, landlords and realtors, left broom-clean.</p><span class="go">View service →</span></a></li>
-        <li><a href="/construction-yard-debris"><h3>Construction &amp; Yard Debris</h3><p>Remodel waste, roofing tear-off and storm yard wreckage, loaded and hauled.</p><span class="go">View service →</span></a></li>
+        <li><a href="/furniture-appliance-removal"><h2>Furniture &amp; Appliance Removal</h2><p>Couches, sectionals, fridges, washers and more — carried out from any room, any floor.</p><span class="go">View service →</span></a></li>
+        <li><a href="/mattresses-single-items"><h2>Mattresses &amp; Single Items</h2><p>One mattress, one couch, one appliance. Small jobs are normal jobs here.</p><span class="go">View service →</span></a></li>
+        <li><a href="/garage-attic-cleanouts"><h2>Garage &amp; Attic Cleanouts</h2><p>Years of "I'll deal with it later," sorted and hauled in a single visit.</p><span class="go">View service →</span></a></li>
+        <li><a href="/estate-foreclosure-cleanouts"><h2>Estate &amp; Foreclosure Cleanouts</h2><p>Whole-house clearing for families, landlords and realtors, left broom-clean.</p><span class="go">View service →</span></a></li>
+        <li><a href="/construction-yard-debris"><h2>Construction &amp; Yard Debris</h2><p>Remodel waste, roofing tear-off and storm yard wreckage, loaded and hauled.</p><span class="go">View service →</span></a></li>
       </ul>
       <div class="cols">
         <div class="card">
-          <h3>What's included</h3>
+          <h2>What's included</h2>
           <ul class="ticks">
             <li>Loading from wherever the junk sits — no curbside staging</li>
             <li>Stairs, tight doorways and long carries handled by the crew</li>
@@ -1257,19 +1294,19 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How it works</h3>
+          <h2>How it works</h2>
           <ol class="howlist">
             <li><span><strong>Book.</strong> Call or text a photo of the pile, and tell us about stairs or tight access.</span></li>
             <li><span><strong>Free on-site estimate.</strong> The crew sizes the load and gives you the price before anything is loaded.</span></li>
             <li><span><strong>Haul day.</strong> Point at what goes — the crew loads it, sweeps up and hauls it away.</span></li>
           </ol>
-          <h3>What affects the price</h3>
+          <h2>What affects the price</h2>
           <p>Hauling is priced by volume — how much of the truck your load fills — plus weight, stairs and carry distance. A single mattress and a full garage are both fine; the crew confirms the exact price on site before the first item moves, and there's no obligation if you pass.</p>
         </div>
       </div>
       <p class="arealine">Hauling crews run across our full Northwest Florida service area — Pensacola, Pensacola Beach, Gulf Breeze, Navarre, Perdido Key, Milton, Ferry Pass, Pace, Cantonment, Warrington, Bellview, Ensley, Molino, West Pensacola, Midway, Bagdad, Century and Jay. <a href="/areas">See the service areas page</a> or text your ZIP to (850) 555-0147 to confirm.</p>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/demolition">Demolition + Disposal</a></li>
           <li><a href="/roof-tarping">Roof Tarping + Storm Response</a></li>
@@ -1288,7 +1325,7 @@
         <div class="a"><p>Same day when there's an opening, otherwise the next available day. Mornings fill first — calling or texting early gives you the best shot at a same-day slot.</p></div>
       </details>
       <div class="page-cta">
-        <h3>Point at it. It's gone.</h3>
+        <h2>Point at it. It's gone.</h2>
         <p>Free on-site estimates across Northwest Florida, with same-day pickup when available.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -1318,13 +1355,13 @@
     </div>
     <div class="wrap">
       <ul class="subcards">
-        <li><a href="/emergency-storm-tarping"><h3>Emergency Storm Tarping</h3><p>A batten-secured tarp over storm damage, dispatched as fast as conditions safely allow.</p><span class="go">View service →</span></a></li>
-        <li><a href="/leak-cover-ups"><h3>Leak &amp; Missing-Shingle Cover-ups</h3><p>Small damage, covered properly now — before a ceiling stain becomes a ceiling replacement.</p><span class="go">View service →</span></a></li>
-        <li><a href="/storm-debris-clearing"><h3>Storm Debris Clearing</h3><p>Fallen limbs, downed fencing and roof debris cut up, loaded and hauled away.</p><span class="go">View service →</span></a></li>
+        <li><a href="/emergency-storm-tarping"><h2>Emergency Storm Tarping</h2><p>A batten-secured tarp over storm damage, dispatched as fast as conditions safely allow.</p><span class="go">View service →</span></a></li>
+        <li><a href="/leak-cover-ups"><h2>Leak &amp; Missing-Shingle Cover-ups</h2><p>Small damage, covered properly now — before a ceiling stain becomes a ceiling replacement.</p><span class="go">View service →</span></a></li>
+        <li><a href="/storm-debris-clearing"><h2>Storm Debris Clearing</h2><p>Fallen limbs, downed fencing and roof debris cut up, loaded and hauled away.</p><span class="go">View service →</span></a></li>
       </ul>
       <div class="cols">
         <div class="card">
-          <h3>What's included</h3>
+          <h2>What's included</h2>
           <ul class="ticks">
             <li>Damage photographed before and after tarping, for your records</li>
             <li>Heavy-duty tarps sized to extend past the damaged area</li>
@@ -1337,19 +1374,19 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How it works</h3>
+          <h2>How it works</h2>
           <ol class="howlist">
             <li><span><strong>Call as soon as it's safe.</strong> Describe the damage — after a storm, tarping calls are dispatched ahead of routine work.</span></li>
             <li><span><strong>On-site assessment.</strong> The crew photographs the damage, sizes the tarp and gives you the price before going up.</span></li>
             <li><span><strong>Tarp secured.</strong> Battened down the same visit, with photos of the finished cover for your records or claim.</span></li>
           </ol>
-          <h3>What affects the price</h3>
+          <h2>What affects the price</h2>
           <p>Tarping is priced by the size of the damaged area, the roof's height and pitch, and how much debris has to come off before a tarp can seal. After a major storm, demand is the other factor — calling early puts you earlier in the dispatch order. The price is confirmed on site before work starts.</p>
         </div>
       </div>
       <p class="arealine">Storm crews cover our full Northwest Florida service area — Pensacola, Pensacola Beach, Gulf Breeze, Navarre, Perdido Key, Milton, Ferry Pass, Pace, Cantonment, Warrington, Bellview, Ensley, Molino, West Pensacola, Midway, Bagdad, Century and Jay. <a href="/areas">See the service areas page</a> or text your ZIP to (850) 555-0147 to confirm.</p>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/demolition">Demolition + Disposal</a></li>
           <li><a href="/junk-hauling">Junk Hauling + Cleanouts</a></li>
@@ -1372,7 +1409,7 @@
         <div class="a"><p>The crew photographs the damage and the finished tarp and gives you the photos for your records — most homeowners file them with their claim. We don't bill your insurer directly; you pay the crew and keep the documentation.</p></div>
       </details>
       <div class="page-cta">
-        <h3>Roof open to the sky?</h3>
+        <h2>Roof open to the sky?</h2>
         <p>Call now — storm tarping is dispatched ahead of routine work across Northwest Florida.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -1402,7 +1439,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>What's included</h3>
+          <h2>What's included</h2>
           <ul class="ticks">
             <li>Kitchen tear-outs — cabinets, counters, islands and backsplashes</li>
             <li>Bathroom demo — tile, tubs, showers, vanities and surrounds</li>
@@ -1413,19 +1450,19 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How it works</h3>
+          <h2>How it works</h2>
           <ol class="howlist">
             <li><span><strong>Book the estimate.</strong> Call or text with the rooms involved — photos of the space help the crew scope it.</span></li>
             <li><span><strong>Free on-site estimate.</strong> The crew marks the scope room by room, confirms utilities, and prices exactly that work in writing.</span></li>
             <li><span><strong>Tear-out day.</strong> The crew strips the space, loads the debris and hauls it off, leaving a clean shell for your remodel crew.</span></li>
           </ol>
-          <h3>What affects the price</h3>
+          <h2>What affects the price</h2>
           <p>Room count and square footage lead, followed by materials: tile and plaster come out slower than drywall, and layered flooring adds labor and disposal weight. Stairs, elevator access and how much is being kept intact around the work all factor in. Your price is set at the free estimate — never guessed over the phone.</p>
         </div>
       </div>
       <p class="arealine">Interior demolition is available across our full Northwest Florida service area — Pensacola, Pensacola Beach, Gulf Breeze, Navarre, Perdido Key, Milton, Ferry Pass, Pace, Cantonment, Warrington, Bellview, Ensley, Molino, West Pensacola, Midway, Bagdad, Century and Jay. <a href="/areas">See the service areas page</a> or text your ZIP to (850) 555-0147 to confirm.</p>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/demolition">Demolition + Disposal — all services</a></li>
           <li><a href="/concrete-removal">Concrete Removal</a></li>
@@ -1447,7 +1484,7 @@
         <div class="a"><p>A single bathroom or kitchen is often a day; a full-house gut runs longer. The crew gives you a timeline with the written estimate, so your remodel schedule can be built around it.</p></div>
       </details>
       <div class="page-cta">
-        <h3>Ready to open it up?</h3>
+        <h2>Ready to open it up?</h2>
         <p>Free on-site estimates for interior demolition across Pensacola and Northwest Florida.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -1478,7 +1515,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>What's included</h3>
+          <h2>What's included</h2>
           <ul class="ticks">
             <li>Shed demolition in Pensacola, FL — full teardown of sheds, barns, carports and gazebos</li>
             <li>Garage demolition and barn demolition, with shed tear down and garage tear down crews</li>
@@ -1490,19 +1527,19 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How it works</h3>
+          <h2>How it works</h2>
           <ol class="howlist">
             <li><span><strong>Book the estimate.</strong> Call or text with the address and a photo of the structure if you have one.</span></li>
             <li><span><strong>Free on-site estimate.</strong> The crew checks size, material, contents and access, flags any permit question, and prices it in writing.</span></li>
             <li><span><strong>Teardown day.</strong> The structure comes down, gets loaded and hauled in the same visit, and the pad area is left clear.</span></li>
           </ol>
-          <h3>What affects the price</h3>
+          <h2>What affects the price</h2>
           <p>Size and construction lead: a metal kit shed and a framed barn with a shingle roof are different jobs. What's stored inside, whether the concrete pad goes too, and how close the truck can get all move the price. It's all settled at the free estimate, before anything comes down.</p>
         </div>
       </div>
       <p class="arealine">Shed and structure removal is available across our full Northwest Florida service area — Pensacola, Pensacola Beach, Gulf Breeze, Navarre, Perdido Key, Milton, Ferry Pass, Pace, Cantonment, Warrington, Bellview, Ensley, Molino, West Pensacola, Midway, Bagdad, Century and Jay. <a href="/areas">See the service areas page</a> or text your ZIP to (850) 555-0147 to confirm.</p>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/demolition">Demolition + Disposal — all services</a></li>
           <li><a href="/deck-fence-hot-tub-removal">Deck, Fence &amp; Hot Tub Removal</a></li>
@@ -1528,7 +1565,7 @@
         <div class="a"><p>Most residential sheds come down and disappear in a single visit. Larger barns or block structures get a timeline with the written estimate.</p></div>
       </details>
       <div class="page-cta">
-        <h3>That shed isn't getting younger</h3>
+        <h2>That shed isn't getting younger</h2>
         <p>Free on-site estimates for structure removal across Pensacola and Northwest Florida.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -1559,7 +1596,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>What's included</h3>
+          <h2>What's included</h2>
           <ul class="ticks">
             <li>Driveway removal in Pensacola, FL — driveways and parking pads broken up and removed</li>
             <li>House and shed slabs, patios and pool decks</li>
@@ -1570,19 +1607,19 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How it works</h3>
+          <h2>How it works</h2>
           <ol class="howlist">
             <li><span><strong>Book the estimate.</strong> Call or text with the address and roughly what's coming out — driveway, slab, patio.</span></li>
             <li><span><strong>Free on-site estimate.</strong> The crew measures the area, checks thickness and reinforcement, and prices the job in writing.</span></li>
             <li><span><strong>Break-up day.</strong> Concrete is broken, loaded and hauled, and the area is left graded — no rubble pile left behind.</span></li>
           </ol>
-          <h3>What affects the price</h3>
+          <h2>What affects the price</h2>
           <p>Square footage and thickness set the baseline; rebar and heavy mesh add cutting time. Equipment access matters too — a front driveway is quicker than a backyard patio with a narrow gate. Disposal weight is the last factor, and it's all priced at the free estimate before work starts.</p>
         </div>
       </div>
       <p class="arealine">Concrete removal is available across our full Northwest Florida service area — Pensacola, Pensacola Beach, Gulf Breeze, Navarre, Perdido Key, Milton, Ferry Pass, Pace, Cantonment, Warrington, Bellview, Ensley, Molino, West Pensacola, Midway, Bagdad, Century and Jay. <a href="/areas">See the service areas page</a> or text your ZIP to (850) 555-0147 to confirm.</p>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/demolition">Demolition + Disposal — all services</a></li>
           <li><a href="/interior-demolition">Interior Demolition</a></li>
@@ -1608,7 +1645,7 @@
         <div class="a"><p>Most residential driveways and slabs are broken up and gone in a day. Thicker commercial-grade pours or tight-access patios can run longer — you'll get a timeline with the estimate.</p></div>
       </details>
       <div class="page-cta">
-        <h3>Cracked, heaved or in the way?</h3>
+        <h2>Cracked, heaved or in the way?</h2>
         <p>Free on-site estimates for concrete removal across Pensacola and Northwest Florida.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -1639,7 +1676,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>What's included</h3>
+          <h2>What's included</h2>
           <ul class="ticks">
             <li>Hot tub removal in Pensacola, FL — hot tubs and spas cut up and carried out</li>
             <li>Deck removal and deck demolition in Pensacola, FL — decks and pergolas torn out, footings removed on request</li>
@@ -1651,19 +1688,19 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How it works</h3>
+          <h2>How it works</h2>
           <ol class="howlist">
             <li><span><strong>Book the estimate.</strong> Call or text with what needs to go — and for a hot tub, whether it's drained and powered off.</span></li>
             <li><span><strong>Free on-site estimate.</strong> The crew checks size, footings and the carry-out path, and prices it in writing.</span></li>
             <li><span><strong>Removal day.</strong> Everything is torn out or cut up, loaded and hauled in one visit.</span></li>
           </ol>
-          <h3>What affects the price</h3>
+          <h2>What affects the price</h2>
           <p>Deck height and size, how deep the footings sit, fence length and post concrete, and a hot tub's size and exit path — through a gate is quicker than over one. Disposal volume ties it together, and the whole job is priced at the free estimate before work starts.</p>
         </div>
       </div>
       <p class="arealine">Deck, fence and hot tub removal is available across our full Northwest Florida service area — Pensacola, Pensacola Beach, Gulf Breeze, Navarre, Perdido Key, Milton, Ferry Pass, Pace, Cantonment, Warrington, Bellview, Ensley, Molino, West Pensacola, Midway, Bagdad, Century and Jay. <a href="/areas">See the service areas page</a> or text your ZIP to (850) 555-0147 to confirm.</p>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/demolition">Demolition + Disposal — all services</a></li>
           <li><a href="/shed-removal">Shed &amp; Structure Removal</a></li>
@@ -1689,7 +1726,7 @@
         <div class="a"><p>If the frame is sound and you plan to re-deck it, yes — the crew removes boards and railings only. They'll tell you honestly at the estimate if the frame isn't worth keeping.</p></div>
       </details>
       <div class="page-cta">
-        <h3>Backyard ready for a reset?</h3>
+        <h2>Backyard ready for a reset?</h2>
         <p>Free on-site estimates for deck, fence and hot tub removal across Northwest Florida.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -1720,7 +1757,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>What's included</h3>
+          <h2>What's included</h2>
           <ul class="ticks">
             <li>Drywall, plaster, lumber and flooring loads</li>
             <li>Cabinets, counters and fixtures from your tear-out</li>
@@ -1731,19 +1768,19 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How it works</h3>
+          <h2>How it works</h2>
           <ol class="howlist">
             <li><span><strong>Book the estimate.</strong> Call or text a photo of the pile and what's in it — mixed debris is fine.</span></li>
             <li><span><strong>Free on-site estimate.</strong> The crew sizes the load and prices it per load, in writing, before loading.</span></li>
             <li><span><strong>Load and haul.</strong> The crew loads everything, sweeps the area and hauls it to disposal or recycling.</span></li>
           </ol>
-          <h3>What affects the price</h3>
+          <h2>What affects the price</h2>
           <p>Volume and weight run this one — concrete and shingles price differently than drywall and lumber. Where the pile sits (driveway vs. backyard) and how many loads or trips the project needs finish the math. Per-load pricing is confirmed at the free estimate, so a project can budget pickups as it goes.</p>
         </div>
       </div>
       <p class="arealine">Demo debris hauling is available across our full Northwest Florida service area — Pensacola, Pensacola Beach, Gulf Breeze, Navarre, Perdido Key, Milton, Ferry Pass, Pace, Cantonment, Warrington, Bellview, Ensley, Molino, West Pensacola, Midway, Bagdad, Century and Jay. <a href="/areas">See the service areas page</a> or text your ZIP to (850) 555-0147 to confirm.</p>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/demolition">Demolition + Disposal — all services</a></li>
           <li><a href="/interior-demolition">Interior Demolition</a></li>
@@ -1769,7 +1806,7 @@
         <div class="a"><p>Yes — recurring pickups are a normal setup for contractors and bigger DIY projects. Set the rhythm at the estimate and call when a load is ready.</p></div>
       </details>
       <div class="page-cta">
-        <h3>The pile goes away</h3>
+        <h2>The pile goes away</h2>
         <p>Free on-site estimates for debris hauling across Pensacola and Northwest Florida.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -1799,7 +1836,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>What's included</h3>
+          <h2>What's included</h2>
           <ul class="ticks">
             <li>Couches, sectionals, recliners and sleepers</li>
             <li>Tables, dressers, wardrobes and bed frames</li>
@@ -1810,19 +1847,19 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How it works</h3>
+          <h2>How it works</h2>
           <ol class="howlist">
             <li><span><strong>Book.</strong> Call or text what needs to go — a photo and the floor it's on help the crew plan.</span></li>
             <li><span><strong>Free on-site estimate.</strong> The crew looks at the pieces and the carry path, and gives the price before anything moves.</span></li>
             <li><span><strong>Carry-out.</strong> The crew takes it from the room it's in, loads it and hauls it away — you don't lift a corner.</span></li>
           </ol>
-          <h3>What affects the price</h3>
+          <h2>What affects the price</h2>
           <p>How many pieces and how big they are lead the estimate. Stairs, long carries and oversized items — sleeper sofas and commercial fridges — add time. Whether appliances are already disconnected and drained matters too. The exact price is given on site, before the crew starts.</p>
         </div>
       </div>
       <p class="arealine">Furniture and appliance removal is available across our full Northwest Florida service area — Pensacola, Pensacola Beach, Gulf Breeze, Navarre, Perdido Key, Milton, Ferry Pass, Pace, Cantonment, Warrington, Bellview, Ensley, Molino, West Pensacola, Midway, Bagdad, Century and Jay. <a href="/areas">See the service areas page</a> or text your ZIP to (850) 555-0147 to confirm.</p>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/junk-hauling">Junk Hauling + Cleanouts — all services</a></li>
           <li><a href="/mattresses-single-items">Mattresses &amp; Single Items</a></li>
@@ -1844,7 +1881,7 @@
         <div class="a"><p>Where local charities and donation centers accept it, usable furniture is dropped off rather than landfilled. The crew will tell you at the estimate what in your load is likely donation-grade.</p></div>
       </details>
       <div class="page-cta">
-        <h3>Heavy, awkward, gone</h3>
+        <h2>Heavy, awkward, gone</h2>
         <p>Free on-site estimates for furniture and appliance removal across Pensacola and Northwest Florida.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -1875,7 +1912,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>What's included</h3>
+          <h2>What's included</h2>
           <ul class="ticks">
             <li>Mattress removal and mattress disposal in Pensacola, FL — mattresses and box springs, any size, one or several</li>
             <li>Single couches, recliners and sectionals pieces</li>
@@ -1886,19 +1923,19 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How it works</h3>
+          <h2>How it works</h2>
           <ol class="howlist">
             <li><span><strong>Book.</strong> Call or text what the item is and where it sits — a photo settles most questions.</span></li>
             <li><span><strong>Free on-site estimate.</strong> The crew confirms the price at the door before the item moves.</span></li>
             <li><span><strong>Carry-out.</strong> The item leaves with the crew — and anything you point at while they're there gets priced on the spot.</span></li>
           </ol>
-          <h3>What affects the price</h3>
+          <h2>What affects the price</h2>
           <p>For a single item it's simple: the item's size, the floor it's on and the carry distance. Adding a second or third item while the crew is there costs less per piece than separate trips — extras are priced before loading, never after.</p>
         </div>
       </div>
       <p class="arealine">Single-item pickup runs across our full Northwest Florida service area — Pensacola, Pensacola Beach, Gulf Breeze, Navarre, Perdido Key, Milton, Ferry Pass, Pace, Cantonment, Warrington, Bellview, Ensley, Molino, West Pensacola, Midway, Bagdad, Century and Jay. <a href="/areas">See the service areas page</a> or text your ZIP to (850) 555-0147 to confirm.</p>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/junk-hauling">Junk Hauling + Cleanouts — all services</a></li>
           <li><a href="/furniture-appliance-removal">Furniture &amp; Appliance Removal</a></li>
@@ -1924,7 +1961,7 @@
         <div class="a"><p>Point at them. The crew prices anything you add before loading it, and you can pass on any of it — the original item's price doesn't change.</p></div>
       </details>
       <div class="page-cta">
-        <h3>Just one thing? Perfect.</h3>
+        <h2>Just one thing? Perfect.</h2>
         <p>Free on-site estimates for single-item pickup across Pensacola and Northwest Florida.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -1955,7 +1992,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>What's included</h3>
+          <h2>What's included</h2>
           <ul class="ticks">
             <li>On-site sorting — keep, donate and haul piles, you direct</li>
             <li>Boxes, bins, shelving and stored furniture</li>
@@ -1967,19 +2004,19 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How it works</h3>
+          <h2>How it works</h2>
           <ol class="howlist">
             <li><span><strong>Book the estimate.</strong> Call or text with the space involved — garage, attic or both, and roughly how full it is.</span></li>
             <li><span><strong>Free on-site estimate.</strong> The crew walks the space with you and prices the full cleanout in writing.</span></li>
             <li><span><strong>Cleanout day.</strong> You call keep or haul; the crew sorts, loads and hauls, and sweeps before leaving.</span></li>
           </ol>
-          <h3>What affects the price</h3>
+          <h2>What affects the price</h2>
           <p>Volume is the main driver — a half garage and a packed two-car price differently. Attic access (pull-down stairs vs. a full staircase), heavy items like safes and shop equipment, and how much sorting you want done on site all factor in. The price is fixed at the free estimate, before the first box moves.</p>
         </div>
       </div>
       <p class="arealine">Garage and attic cleanouts are available across our full Northwest Florida service area — Pensacola, Pensacola Beach, Gulf Breeze, Navarre, Perdido Key, Milton, Ferry Pass, Pace, Cantonment, Warrington, Bellview, Ensley, Molino, West Pensacola, Midway, Bagdad, Century and Jay. <a href="/areas">See the service areas page</a> or text your ZIP to (850) 555-0147 to confirm.</p>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/junk-hauling">Junk Hauling + Cleanouts — all services</a></li>
           <li><a href="/estate-foreclosure-cleanouts">Estate &amp; Foreclosure Cleanouts</a></li>
@@ -2005,7 +2042,7 @@
         <div class="a"><p>Those can't go in the truck — they belong at the county hazardous-waste drop-off. The crew sets them aside in one spot and tells you where your county's drop-off is.</p></div>
       </details>
       <div class="page-cta">
-        <h3>Park in your garage again</h3>
+        <h2>Park in your garage again</h2>
         <p>Free on-site estimates for garage and attic cleanouts across Pensacola and Northwest Florida.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -2036,7 +2073,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>What's included</h3>
+          <h2>What's included</h2>
           <ul class="ticks">
             <li>Estate cleanout and house cleanout in Pensacola, FL — whole-house furniture and contents removal</li>
             <li>Foreclosure cleanout, eviction cleanout and move-out cleanout for landlords and managers</li>
@@ -2050,19 +2087,19 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How it works</h3>
+          <h2>How it works</h2>
           <ol class="howlist">
             <li><span><strong>Book the estimate.</strong> Call or text with the address, the home's size and your deadline — closing and listing dates come first in scheduling.</span></li>
             <li><span><strong>Free on-site estimate.</strong> The crew walks every room with you (or by phone and photos), flags what's set aside, and prices the full cleanout in writing.</span></li>
             <li><span><strong>Cleanout days.</strong> The crew clears the property room by room and leaves it broom-clean, on the schedule agreed at the estimate.</span></li>
           </ol>
-          <h3>What affects the price</h3>
+          <h2>What affects the price</h2>
           <p>The home's size and how full it is drive the price, along with outbuildings, stairs and heavy items. Tight deadlines can require a bigger crew or extra trucks, which the estimate lays out plainly — one written price for the whole property, agreed before work starts.</p>
         </div>
       </div>
       <p class="arealine">Estate and foreclosure cleanouts are available across our full Northwest Florida service area — Pensacola, Pensacola Beach, Gulf Breeze, Navarre, Perdido Key, Milton, Ferry Pass, Pace, Cantonment, Warrington, Bellview, Ensley, Molino, West Pensacola, Midway, Bagdad, Century and Jay. <a href="/areas">See the service areas page</a> or text your ZIP to (850) 555-0147 to confirm.</p>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/junk-hauling">Junk Hauling + Cleanouts — all services</a></li>
           <li><a href="/garage-attic-cleanouts">Garage &amp; Attic Cleanouts</a></li>
@@ -2088,7 +2125,7 @@
         <div class="a"><p>Crews are briefed to set aside documents, photos and anything that looks like a keepsake or valuable, and to check with you before hauling anything questionable. Flag specific items at the estimate and they're treated as untouchable.</p></div>
       </details>
       <div class="page-cta">
-        <h3>A whole house, handled</h3>
+        <h2>A whole house, handled</h2>
         <p>Free on-site estimates for estate and foreclosure cleanouts across Northwest Florida.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -2119,7 +2156,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>What's included</h3>
+          <h2>What's included</h2>
           <ul class="ticks">
             <li>Drywall, lumber, tile and flooring waste</li>
             <li>Roofing debris — shingles, felt and torn-off decking</li>
@@ -2131,19 +2168,19 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How it works</h3>
+          <h2>How it works</h2>
           <ol class="howlist">
             <li><span><strong>Book the estimate.</strong> Call or text a photo of the pile and what's in it — mixed loads are fine.</span></li>
             <li><span><strong>Free on-site estimate.</strong> The crew sizes the load and prices it per load, in writing.</span></li>
             <li><span><strong>Load and haul.</strong> Everything is loaded, the area swept, and the debris hauled to disposal or recycling.</span></li>
           </ol>
-          <h3>What affects the price</h3>
+          <h2>What affects the price</h2>
           <p>Volume and weight lead: a load of shingles and a load of branches are priced differently. Where the pile sits, how mixed the materials are, and whether you need one pickup or a series through a project round it out. Per-load pricing is confirmed at the free estimate, so projects can budget debris as they go.</p>
         </div>
       </div>
       <p class="arealine">Construction and yard debris removal is available across our full Northwest Florida service area — Pensacola, Pensacola Beach, Gulf Breeze, Navarre, Perdido Key, Milton, Ferry Pass, Pace, Cantonment, Warrington, Bellview, Ensley, Molino, West Pensacola, Midway, Bagdad, Century and Jay. <a href="/areas">See the service areas page</a> or text your ZIP to (850) 555-0147 to confirm.</p>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/junk-hauling">Junk Hauling + Cleanouts — all services</a></li>
           <li><a href="/demo-debris-hauling">Demo Debris Hauling</a></li>
@@ -2169,7 +2206,7 @@
         <div class="a"><p>For ground debris, yes — and if limbs are on the roof or the roof itself is damaged, start with <a href="/storm-debris-clearing">storm debris clearing</a> and <a href="/emergency-storm-tarping">emergency tarping</a> so the house is protected first.</p></div>
       </details>
       <div class="page-cta">
-        <h3>Keep the site clean</h3>
+        <h2>Keep the site clean</h2>
         <p>Free on-site estimates for debris removal across Pensacola and Northwest Florida.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -2199,7 +2236,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>What's included</h3>
+          <h2>What's included</h2>
           <ul class="ticks">
             <li>Damage photographed before and after, for your records and claim</li>
             <li>Heavy-duty tarp sized to extend well past the damaged area</li>
@@ -2210,20 +2247,20 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How it works</h3>
+          <h2>How it works</h2>
           <ol class="howlist">
             <li><span><strong>Call or text as soon as it's safe.</strong> Describe the damage — tarping calls jump the line after a storm.</span></li>
             <li><span><strong>On-site assessment.</strong> The crew photographs the damage, sizes the tarp and confirms the price before going up.</span></li>
             <li><span><strong>Tarp secured the same visit.</strong> Battened down tight, with finished photos handed to you for your records.</span></li>
           </ol>
-          <h3>What affects the price</h3>
+          <h2>What affects the price</h2>
           <p>The size of the damaged area sets the tarp size; the roof's height, stories and pitch set how the crew works on it. Debris that has to come off the roof first, and post-storm demand across Northwest Florida, factor in as well. The price is confirmed on site before work starts — even in an emergency, you approve it first.</p>
         </div>
       </div>
       <p class="arealine">Coverage, county by county and town by town: emergency roof tarping in Escambia County and emergency roof tarping in Santa Rosa County, plus emergency roof tarping in Gulf Breeze, FL, Pace, FL, Milton, FL, Navarre, FL and Perdido Key, FL. The same storm-response crews also run emergency roof tarping in Fort Walton Beach, FL and emergency roof tarping in Destin, FL when Gulf Coast storms track east. Whether you need a roof tarp after hurricane damage in Pensacola, FL — a roof tarp after a hurricane, sealed fast — or a roof tarp after a storm anywhere on this coast, the call is the same — including the kind of hurricane roof damage Pensacola, FL saw with Hurricane Sally, and the roof tarping after wind damage Pensacola, FL homeowners book every season.</p>
       <p class="arealine">Emergency tarping crews cover our full Northwest Florida service area — Pensacola, Pensacola Beach, Gulf Breeze, Navarre, Perdido Key, Milton, Ferry Pass, Pace, Cantonment, Warrington, Bellview, Ensley, Molino, West Pensacola, Midway, Bagdad, Century and Jay. <a href="/areas">See the service areas page</a> or text your ZIP to (850) 555-0147 to confirm.</p>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/roof-tarping">Roof Tarping + Storm Response — all services</a></li>
           <li><a href="/leak-cover-ups">Leak &amp; Missing-Shingle Cover-ups</a></li>
@@ -2245,7 +2282,7 @@
         <div class="a"><p>Yes — the crew photographs the damage before tarping and the finished cover after, and the photos are yours for your records and claim. You pay the crew directly; we don't bill insurers.</p></div>
       </details>
       <div class="page-cta">
-        <h3>Water coming in? Call now.</h3>
+        <h2>Water coming in? Call now.</h2>
         <p>Storm tarping is dispatched ahead of routine work across Northwest Florida.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -2276,7 +2313,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>What's included</h3>
+          <h2>What's included</h2>
           <ul class="ticks">
             <li>The damaged or missing-shingle area located and photographed</li>
             <li>Cover sized to the patch and secured with battens</li>
@@ -2286,19 +2323,19 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How it works</h3>
+          <h2>How it works</h2>
           <ol class="howlist">
             <li><span><strong>Book.</strong> Call or text with where the leak shows inside — that helps the crew find the entry point above it.</span></li>
             <li><span><strong>Free on-site estimate.</strong> The crew inspects the area, photographs what they find and prices the cover-up before starting.</span></li>
             <li><span><strong>Cover secured.</strong> The patch is sealed the same visit, and you get the photos and the crew's read on next steps.</span></li>
           </ol>
-          <h3>What affects the price</h3>
+          <h2>What affects the price</h2>
           <p>Cover-ups are among the smaller jobs we run: price turns on the patch size, the roof's pitch and height, and safe access to the damaged area. It's confirmed at the free on-site estimate, before any work begins.</p>
         </div>
       </div>
       <p class="arealine">Leak cover-ups are available across our full Northwest Florida service area — Pensacola, Pensacola Beach, Gulf Breeze, Navarre, Perdido Key, Milton, Ferry Pass, Pace, Cantonment, Warrington, Bellview, Ensley, Molino, West Pensacola, Midway, Bagdad, Century and Jay. <a href="/areas">See the service areas page</a> or text your ZIP to (850) 555-0147 to confirm.</p>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/roof-tarping">Roof Tarping + Storm Response — all services</a></li>
           <li><a href="/emergency-storm-tarping">Emergency Storm Tarping</a></li>
@@ -2324,7 +2361,7 @@
         <div class="a"><p>A batten-secured cover typically holds for days to weeks — long enough to get permanent repairs scheduled without rushing into the first available bid.</p></div>
       </details>
       <div class="page-cta">
-        <h3>Stop the drip before the ceiling</h3>
+        <h2>Stop the drip before the ceiling</h2>
         <p>Free on-site estimates for leak cover-ups across Pensacola and Northwest Florida.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -2355,7 +2392,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>What's included</h3>
+          <h2>What's included</h2>
           <ul class="ticks">
             <li>Fallen limbs and branches cut up and hauled</li>
             <li>Debris cleared off roofs, so tarping can be done</li>
@@ -2366,19 +2403,19 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How it works</h3>
+          <h2>How it works</h2>
           <ol class="howlist">
             <li><span><strong>Book.</strong> Call or text once it's safe — photos of the yard help the crew bring the right equipment.</span></li>
             <li><span><strong>Free on-site estimate.</strong> The crew walks the property, sizes the loads and prices the clearing in writing.</span></li>
             <li><span><strong>Clearing day.</strong> Debris is cut, loaded and hauled, with driveway and access cleared first.</span></li>
           </ol>
-          <h3>What affects the price</h3>
+          <h2>What affects the price</h2>
           <p>Total volume leads, then limb size — big oak limbs need chainsaw time before they load. Debris on a roof prices differently from debris on the ground, and post-storm demand across Northwest Florida affects scheduling. The full price is set at the free estimate before cutting starts.</p>
         </div>
       </div>
       <p class="arealine">Storm debris clearing is available across our full Northwest Florida service area — Pensacola, Pensacola Beach, Gulf Breeze, Navarre, Perdido Key, Milton, Ferry Pass, Pace, Cantonment, Warrington, Bellview, Ensley, Molino, West Pensacola, Midway, Bagdad, Century and Jay. <a href="/areas">See the service areas page</a> or text your ZIP to (850) 555-0147 to confirm.</p>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/roof-tarping">Roof Tarping + Storm Response — all services</a></li>
           <li><a href="/emergency-storm-tarping">Emergency Storm Tarping</a></li>
@@ -2404,7 +2441,7 @@
         <div class="a"><p>Fallen limbs are cut to loadable lengths by the crew. Standing trees that need to come down are a tree service's work — the crew will tell you at the estimate if that's what you're looking at.</p></div>
       </details>
       <div class="page-cta">
-        <h3>Get your yard back</h3>
+        <h2>Get your yard back</h2>
         <p>Free on-site estimates for storm debris clearing across Pensacola and Northwest Florida.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -2421,10 +2458,10 @@
   <section>
     <div class="wrap">
       <p class="kicker">Guides</p>
-      <h2 style="font-size:clamp(34px,5.4vw,54px)">Pensacola Home Services Guides — costs, permits, disposal &amp; insurance, explained straight</h2>
+      <h1 class="page-h1" style="font-size:clamp(34px,5.4vw,54px)">Pensacola Home Services Guides — costs, permits, disposal &amp; insurance, explained straight</h1>
       <p class="sub">These Pensacola home services guides answer the questions Northwest Florida homeowners research before they book: what junk removal costs, how demolition permits work, how to dispose of a mattress or appliances, and how Florida roof insurance claims actually go. Straight answers, no invented prices — where a cost depends on your job, we say what drives it and how to get the real number free.</p>
 
-      <h3 style="font-size:24px;text-transform:uppercase;margin:34px 0 14px">Junk removal guides</h3>
+      <h2 style="font-size:24px;text-transform:uppercase;margin:34px 0 14px">Junk removal guides</h2>
       <ul class="subcards">
         <li><a href="/blog/junk-removal-prices-pensacola"><h3>Junk Removal Prices in Pensacola, FL</h3><p>How junk removal is priced — by the load, the weight and the carry, never by a made-up flat rate.</p><span class="go">Read the guide →</span></a></li>
         <li><a href="/blog/how-junk-removal-works"><h3>How Does Junk Removal Work?</h3><p>Book, get the price on site, and watch the crew load it from wherever it sits.</p><span class="go">Read the guide →</span></a></li>
@@ -2436,17 +2473,17 @@
         <li><a href="/blog/how-to-dispose-of-appliances-pensacola"><h3>How to Dispose of Appliances in Pensacola</h3><p>Refrigerant rules, retailer haul-away, scrap options, and crew removal for the heavy ones.</p><span class="go">Read the guide →</span></a></li>
         <li><a href="/blog/bulk-waste-pickup-pensacola"><h3>Bulk Waste Pickup in Pensacola — How It Works</h3><p>What the city takes, what it won't, and when a private crew is the practical answer.</p><span class="go">Read the guide →</span></a></li>
       </ul>
-      <h3 style="font-size:24px;text-transform:uppercase;margin:34px 0 14px">Cleanout guides</h3>
+      <h2 style="font-size:24px;text-transform:uppercase;margin:34px 0 14px">Cleanout guides</h2>
       <ul class="subcards">
         <li><a href="/blog/estate-cleanout-checklist"><h3>Estate Cleanout Checklist</h3><p>Documents first, keepsakes second, then donate, sell, haul and clean — in the right order.</p><span class="go">Read the guide →</span></a></li>
         <li><a href="/blog/hoarding-cleanup-cost"><h3>Hoarding Cleanup Cost — What Drives It</h3><p>Volume, sorting time, and disposal set the price — and why it's always quoted on site.</p><span class="go">Read the guide →</span></a></li>
       </ul>
-      <h3 style="font-size:24px;text-transform:uppercase;margin:34px 0 14px">Debris guides</h3>
+      <h2 style="font-size:24px;text-transform:uppercase;margin:34px 0 14px">Debris guides</h2>
       <ul class="subcards">
         <li><a href="/blog/construction-debris-disposal-pensacola"><h3>Construction Debris Disposal in Pensacola, FL</h3><p>Crew hauling, dumpsters and self-hauling compared — plus what gets recycled.</p><span class="go">Read the guide →</span></a></li>
         <li><a href="/blog/yard-waste-disposal-escambia-county"><h3>Yard Waste Disposal in Escambia County</h3><p>Weekly yard waste collection, its size limits, and when a pile needs a crew instead.</p><span class="go">Read the guide →</span></a></li>
       </ul>
-      <h3 style="font-size:24px;text-transform:uppercase;margin:34px 0 14px">Demolition guides</h3>
+      <h2 style="font-size:24px;text-transform:uppercase;margin:34px 0 14px">Demolition guides</h2>
       <ul class="subcards">
         <li><a href="/blog/demolition-cost-per-square-foot"><h3>Demolition Cost Per Square Foot — How Pricing Really Works</h3><p>Why per-square-foot is a planning shortcut, and what actually sets your demolition price.</p><span class="go">Read the guide →</span></a></li>
         <li><a href="/blog/pensacola-demolition-permit-requirements"><h3>Pensacola Demolition Permit Requirements</h3><p>When you need one, what else has to happen first, and who handles it.</p><span class="go">Read the guide →</span></a></li>
@@ -2457,7 +2494,7 @@
         <li><a href="/blog/demolition-debris-disposal-pensacola"><h3>Demolition Debris Disposal in Pensacola</h3><p>Sorted streams, recycling where facilities take it, and licensed disposal for the rest.</p><span class="go">Read the guide →</span></a></li>
         <li><a href="/blog/deconstruction-vs-demolition"><h3>Deconstruction vs. Demolition — Cost and Differences</h3><p>One takes a building apart for salvage; the other takes it down fast. The cost trade-off, honestly.</p><span class="go">Read the guide →</span></a></li>
       </ul>
-      <h3 style="font-size:24px;text-transform:uppercase;margin:34px 0 14px">Roof &amp; storm guides</h3>
+      <h2 style="font-size:24px;text-transform:uppercase;margin:34px 0 14px">Roof &amp; storm guides</h2>
       <ul class="subcards">
         <li><a href="/blog/will-insurance-pay-for-roof-tarping"><h3>Will Insurance Pay for Roof Tarping?</h3><p>Tarping is the mitigation insurers expect — here's how reimbursement usually works.</p><span class="go">Read the guide →</span></a></li>
         <li><a href="/blog/how-to-tarp-a-roof-after-a-hurricane"><h3>How to Tarp a Roof After a Hurricane</h3><p>Safety first, then the batten method that keeps a tarp on through Florida rain.</p><span class="go">Read the guide →</span></a></li>
@@ -2493,7 +2530,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>Priced by volume: quarter, half and full truckloads are the standard units</li>
             <li>Weight matters — concrete, dirt and shingles cost more per load than furniture</li>
@@ -2502,21 +2539,21 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>If you want the real number for your pile, book a free estimate through our junk hauling crew — the price is set on site, in writing, with no obligation.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
             <div class="card" style="margin-bottom:22px">
-        <h3>How much does junk removal cost in Pensacola, FL?</h3>
+        <h2>How much does junk removal cost in Pensacola, FL?</h2>
         <p>Pricing is set by the job — how much space your load takes in the truck, how heavy it is, and how far the crew has to carry it. That's why every job starts with a free on-site estimate anywhere in our Pensacola service area: the crew looks at the work, gives you the price in writing before anything is loaded, and there's no obligation if you pass.</p>
-        <h3>What does junk removal cost per truckload?</h3>
+        <h2>What does junk removal cost per truckload?</h2>
         <p>Crews price by the load — a quarter, half or full truckload — adjusted for weight and access. Dense loads like concrete or dirt weigh more than the same volume of furniture, so the per-truckload price is confirmed at your free estimate, in writing, before loading starts.</p>
-        <h3>Is junk removal worth it?</h3>
+        <h2>Is junk removal worth it?</h2>
         <p>For one small item next to a curb, maybe not. For anything heavy, upstairs, or more than a pickup load, most people find it is: no truck rental, no dump trips, no lifting injuries, and the space is swept when the crew leaves. The free estimate lets you compare the real price against doing it yourself before you decide.</p>
       </div>
 <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/junk-hauling">Junk Hauling in Pensacola, FL</a></li>
           <li><a href="/quote">Get a free estimate</a></li>
@@ -2524,7 +2561,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -2554,7 +2591,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>Book by call or text — photos of the pile help the crew plan</li>
             <li>Free on-site estimate with the price in writing before loading starts</li>
@@ -2563,13 +2600,13 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>That's exactly the flow on our how-it-works page, and it's how every First Coast Haul job runs, from one couch to a whole house.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/how">How it works</a></li>
           <li><a href="/junk-hauling">Junk Hauling in Pensacola, FL</a></li>
@@ -2577,7 +2614,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -2607,7 +2644,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>Dumpster: cheaper for light debris you'll load yourself over several days</li>
             <li>Junk removal: no lifting, no rental clock, no box sitting in the driveway</li>
@@ -2616,13 +2653,13 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>Our demo debris hauling page covers the crew option for remodel and tear-out waste, priced per load at a free estimate.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/demo-debris-hauling">Demolition Debris Removal</a></li>
           <li><a href="/junk-hauling">Junk Hauling in Pensacola, FL</a></li>
@@ -2630,7 +2667,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -2660,7 +2697,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>Good condition: donation or free-listing gets it a second life</li>
             <li>Too worn to donate: check the City of Pensacola's bulk waste rules for your address</li>
@@ -2669,13 +2706,13 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>Our furniture removal crew carries pieces out from any room or floor in Pensacola and across Northwest Florida, often the same day you call.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/furniture-appliance-removal">Furniture Removal in Pensacola, FL</a></li>
           <li><a href="/mattresses-single-items">Mattress Removal in Pensacola, FL</a></li>
@@ -2683,7 +2720,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -2713,7 +2750,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>Donation pickup: free, but only for items charities can resell, on their schedule</li>
             <li>City bulk collection: free for eligible household items, with set-out rules and size limits</li>
@@ -2722,13 +2759,13 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>If your load doesn't fit the free lanes, start with a free on-site estimate — you'll know the exact price before deciding anything.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/junk-hauling">Junk Hauling in Pensacola, FL</a></li>
           <li><a href="/quote">Get a free estimate</a></li>
@@ -2736,7 +2773,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -2766,7 +2803,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>Accepted usually: solid tables, dressers, sofas and bed frames in good shape</li>
             <li>Declined usually: stained, torn, broken or smoke-damaged pieces, and most used mattresses</li>
@@ -2775,13 +2812,13 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>First Coast Haul crews drop donatable furniture at local charities during removal jobs — tell the crew at the estimate which pieces you'd like donated.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/furniture-appliance-removal">Furniture Removal in Pensacola, FL</a></li>
           <li><a href="/estate-foreclosure-cleanouts">Estate Cleanout in Pensacola, FL</a></li>
@@ -2789,7 +2826,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -2819,7 +2856,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>New-bed delivery: ask about old-mattress take-back before the truck leaves</li>
             <li>City bulk pickup: bagging rules and schedules vary — verify before set-out</li>
@@ -2828,13 +2865,13 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>Our mattress removal service picks up one mattress or several, from any room, across Pensacola and Northwest Florida.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/mattresses-single-items">Mattress Removal in Pensacola, FL</a></li>
           <li><a href="/furniture-appliance-removal">Furniture Removal in Pensacola, FL</a></li>
@@ -2842,7 +2879,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -2872,7 +2909,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>Fridges/freezers: refrigerant must be recovered — use a proper channel, not the curb</li>
             <li>New appliance delivery: haul-away is cheapest when bundled — ask before delivery day</li>
@@ -2881,13 +2918,13 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>First Coast Haul's furniture and appliance removal covers fridges, washers, dryers, stoves and water heaters across Northwest Florida.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/furniture-appliance-removal">Furniture &amp; Appliance Removal</a></li>
           <li><a href="/junk-hauling">Junk Hauling in Pensacola, FL</a></li>
@@ -2895,7 +2932,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -2925,7 +2962,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>First: wills, deeds, insurance papers, photos, jewelry and documents — set aside, never hauled</li>
             <li>Walk every room with the family and flag keeps before anything moves</li>
@@ -2935,13 +2972,13 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>Our estate cleanout crews work to your deadline and can coordinate by phone and photos if you're out of state.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/estate-foreclosure-cleanouts">Estate Cleanout in Pensacola, FL</a></li>
           <li><a href="/garage-attic-cleanouts">Garage Cleanout in Pensacola, FL</a></li>
@@ -2949,7 +2986,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -2979,7 +3016,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>Volume leads: a packed home can take days and multiple trucks</li>
             <li>Sorting valuables and documents out of the load adds careful crew time</li>
@@ -2988,13 +3025,13 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>First Coast Haul handles hoarding cleanup in Pensacola, FL as part of its estate and whole-house cleanout work — start with a free estimate.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/estate-foreclosure-cleanouts">Estate Cleanout in Pensacola, FL</a></li>
           <li><a href="/quote">Get a free estimate</a></li>
@@ -3002,7 +3039,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -3032,7 +3069,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>Drywall, lumber, tile and roofing are the standard remodel streams</li>
             <li>Concrete and metal are heavy: they change pricing and recycling options</li>
@@ -3041,13 +3078,13 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>Our construction debris removal runs one-off and scheduled pickups for contractors and DIY remodelers across Northwest Florida.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/construction-yard-debris">Construction Debris Removal</a></li>
           <li><a href="/demo-debris-hauling">Demolition Debris Removal</a></li>
@@ -3055,7 +3092,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -3085,7 +3122,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>Routine clippings and small branches: city yard waste collection, set out to spec</li>
             <li>Oversized limbs must usually be cut down to the city's length limits to qualify</li>
@@ -3094,13 +3131,13 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>For piles the city won't take, our yard debris removal covers branches, fencing, dirt and landscaping waste across Northwest Florida.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/construction-yard-debris">Construction &amp; Yard Debris Removal</a></li>
           <li><a href="/storm-debris-clearing">Storm Debris Removal</a></li>
@@ -3108,7 +3145,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -3138,7 +3175,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>Eligible: individual oversized household items set out correctly on your day</li>
             <li>Not eligible: construction debris, hazardous items, and unlimited quantities</li>
@@ -3147,13 +3184,13 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>When bulk pickup can't cover it, First Coast Haul's junk hauling crews load from inside the home — no curbside staging.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/junk-hauling">Junk Hauling in Pensacola, FL</a></li>
           <li><a href="/mattresses-single-items">Mattress Removal in Pensacola, FL</a></li>
@@ -3161,7 +3198,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -3191,7 +3228,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>Square footage sets the baseline; material and mass move it</li>
             <li>Interior-only (selective) demolition prices lower per foot than full teardown</li>
@@ -3200,21 +3237,21 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>For a real number on your structure, book a free estimate with our Pensacola demolition contractor crews.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
             <div class="card" style="margin-bottom:22px">
-        <h3>How much does house demolition cost in Florida?</h3>
+        <h2>How much does house demolition cost in Florida?</h2>
         <p>House demolition pricing turns on the home's size and construction, what's in it, site access, permits and disposal weight — a small wood-frame house and a block house are very different jobs. Because the range is wide, the price is set at a free on-site estimate, in writing, before anything comes down. No honest crew quotes a whole house sight unseen.</p>
-        <h3>How much does it cost to demolish a shed?</h3>
+        <h2>How much does it cost to demolish a shed?</h2>
         <p>Shed demolition pricing depends on size, construction — a metal kit shed and a framed shed with a shingle roof are different jobs — what's stored inside, and whether the concrete pad goes too. It's all settled at a free on-site estimate before anything comes down.</p>
-        <h3>How much does pool removal cost in Florida?</h3>
+        <h2>How much does pool removal cost in Florida?</h2>
         <p>Pool removal pricing depends on whether it's a partial removal (break up and fill) or a full removal, the pool's size and material, and equipment access to your yard. The crew explains both options and prices the job at a free on-site estimate.</p>
       </div>
 <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/demolition">Demolition Contractor in Pensacola, FL</a></li>
           <li><a href="/quote">Get a free estimate</a></li>
@@ -3222,7 +3259,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -3252,7 +3289,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>Structure demolition: expect a permit; interior-only work is handled differently</li>
             <li>Utilities — electric, water, sewer, gas — must be confirmed off before teardown</li>
@@ -3261,13 +3298,13 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>Demolition planning, permits included, is part of the free estimate on every First Coast Haul demolition job.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/demolition">Demolition Contractor in Pensacola, FL</a></li>
           <li><a href="/interior-demolition">Interior Demolition in Pensacola, FL</a></li>
@@ -3275,7 +3312,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -3305,7 +3342,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>Structure demolition: expect a permit — city office inside Pensacola, county building services in unincorporated areas</li>
             <li>Utilities — electric, water, sewer, gas — must be confirmed off before teardown</li>
@@ -3314,13 +3351,13 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>Demolition planning, county and city permits included, is part of the free estimate on every First Coast Haul demolition job.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/demolition">Demolition Contractor in Pensacola, FL</a></li>
           <li><a href="/blog/pensacola-demolition-permit-requirements">Pensacola Demolition Permit Requirements</a></li>
@@ -3329,7 +3366,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -3359,7 +3396,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>Interior demo: selective — only the scoped rooms and materials come out</li>
             <li>Full demo: structure, and optionally foundation and pad, all removed</li>
@@ -3368,13 +3405,13 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>Not sure which path your property is on? The free estimate covers both — our crews do interior demolition and full structure removal.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/interior-demolition">Interior Demolition in Pensacola, FL</a></li>
           <li><a href="/demolition">Demolition Contractor in Pensacola, FL</a></li>
@@ -3382,7 +3419,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -3412,7 +3449,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>Size and construction lead: double-wides are two structures' worth of work</li>
             <li>Utility disconnects and county permits are part of the job scope</li>
@@ -3421,13 +3458,13 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>Our demolition crews handle mobile home demolition and removal across Pensacola and Northwest Florida — start with a free estimate.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/demolition">Demolition Contractor in Pensacola, FL</a></li>
           <li><a href="/shed-removal">Shed Removal in Pensacola, FL</a></li>
@@ -3435,7 +3472,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -3465,7 +3502,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>Thickness is the multiplier: every extra inch is more breaking and more weight</li>
             <li>Rebar and wire mesh add cutting time to every section</li>
@@ -3474,13 +3511,13 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>Get your slab measured at a free estimate — our concrete removal crews cover Pensacola and the Pensacola area.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/concrete-removal">Concrete Removal in Pensacola, FL</a></li>
           <li><a href="/demolition">Demolition Contractor in Pensacola, FL</a></li>
@@ -3488,7 +3525,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -3518,7 +3555,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>Sorting at load time is what makes recycling possible — mixed piles landfill more</li>
             <li>Concrete is the most recyclable stream: crushed for road base where accepted</li>
@@ -3527,13 +3564,13 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>Our demolition debris removal loads from the pile or straight from the room, across Pensacola and Northwest Florida.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/demo-debris-hauling">Demolition Debris Removal</a></li>
           <li><a href="/construction-yard-debris">Construction Debris Removal</a></li>
@@ -3541,7 +3578,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -3571,7 +3608,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>Demolition: fastest, lowest labor, most debris to disposal</li>
             <li>Deconstruction: slower, higher labor, materials salvaged for reuse or donation</li>
@@ -3580,13 +3617,13 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>First Coast Haul crews offer deconstruction services in Pensacola, FL where a structure has material worth saving — the free estimate covers which approach fits.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/demolition">Demolition Contractor in Pensacola, FL</a></li>
           <li><a href="/interior-demolition">Interior Demolition in Pensacola, FL</a></li>
@@ -3594,7 +3631,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -3624,7 +3661,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>Mitigation is expected: an untarped roof that keeps leaking can complicate a claim</li>
             <li>Photograph damage before, during and after — timestamps help</li>
@@ -3633,13 +3670,13 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>Our roof tarping crews photograph damage and finished tarps on every job and hand you the photos for your records.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/roof-tarping">Roof Tarping in Pensacola, FL</a></li>
           <li><a href="/emergency-storm-tarping">Emergency Roof Tarping in Pensacola, FL</a></li>
@@ -3647,7 +3684,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -3677,7 +3714,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>Wait for safe conditions — no lightning, no high wind, dry footing</li>
             <li>Size the tarp past the damage on all sides; cover the ridge for peak damage</li>
@@ -3686,13 +3723,13 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>If you'd rather not be on the roof at all, our emergency tarping crews do exactly this, as soon as conditions safely allow.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/emergency-storm-tarping">Emergency Roof Tarping in Pensacola, FL</a></li>
           <li><a href="/roof-tarping">Roof Tarping in Pensacola, FL</a></li>
@@ -3700,7 +3737,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -3730,7 +3767,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>Document first: wide shots and close-ups, inside stains as well as the roof</li>
             <li>Mitigate second: a batten-secured tarp stops the loss from growing</li>
@@ -3739,21 +3776,21 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>First Coast Haul crews supply the before-and-after photos and invoice your file needs — we document every tarping job.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
             <div class="card" style="margin-bottom:22px">
-        <h3>Roof damage insurance claim in Pensacola, FL — where to start</h3>
+        <h2>Roof damage insurance claim in Pensacola, FL — where to start</h2>
         <p>Start by documenting everything: photos of the damage before anything is moved, then temporary protection like a tarp to stop further damage — insurers generally expect reasonable mitigation. File promptly with your insurer, keep invoices and photos, and don't start permanent repairs until your adjuster has seen the damage or told you to proceed. Our crews photograph damage and finished tarps and give you the photos and invoice for your records; we don't bill insurers directly.</p>
-        <h3>What is the Blue Roof Program in Florida?</h3>
+        <h2>What is the Blue Roof Program in Florida?</h2>
         <p>The Blue Roof Program Florida homeowners ask about after major storms — formally Operation Blue Roof, run by FEMA with the U.S. Army Corps of Engineers — provides temporary blue tarp roofs for storm-damaged homes after certain major disasters, at no cost to eligible homeowners. It only runs when it's activated for a specific disaster and area, and sign-up windows are limited.</p>
-        <h3>Does the FEMA Blue Roof Program cover Pensacola, FL?</h3>
+        <h2>Does the FEMA Blue Roof Program cover Pensacola, FL?</h2>
         <p>Only when the program is activated after a federally declared disaster that includes Escambia County or your county — it isn't a standing service. If it isn't active, or you can't wait for it, private emergency tarping gets a crew on your roof as soon as conditions safely allow, priced and confirmed on site.</p>
       </div>
 <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/roof-tarping">Roof Tarping in Pensacola, FL</a></li>
           <li><a href="/faq">Junk Removal FAQ — tarping &amp; insurance answers</a></li>
@@ -3761,7 +3798,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -3791,7 +3828,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>Buckets and plastic sheeting buy time — furniture and electronics move first</li>
             <li>A spreading ceiling stain means water is pooling — watch for sagging</li>
@@ -3800,13 +3837,13 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>Our leak cover-up crews find the entry point, photograph it, and seal the patch under a batten-secured cover.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/leak-cover-ups">Roof Leak Repair &amp; Cover-ups</a></li>
           <li><a href="/emergency-storm-tarping">Emergency Roof Tarping in Pensacola, FL</a></li>
@@ -3814,7 +3851,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -3844,7 +3881,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>Batten-secured tarp: the reliable temporary fix for storm and shingle damage</li>
             <li>Sealants need a dry surface and a small problem — rain defeats both</li>
@@ -3853,13 +3890,13 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>First Coast Haul's cover-up service is exactly this fix, priced at a free on-site estimate before work begins.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/leak-cover-ups">Roof Leak Repair &amp; Cover-ups</a></li>
           <li><a href="/roof-tarping">Roof Tarping in Pensacola, FL</a></li>
@@ -3867,7 +3904,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -3897,7 +3934,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>Shingles in the yard = openings on the roof, even if you can't see them</li>
             <li>Granule piles at downspouts signal shingles lost their protective surface</li>
@@ -3906,13 +3943,13 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>Our emergency tarping crews inspect, photograph and cover hurricane roof damage across Northwest Florida.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/emergency-storm-tarping">Emergency Roof Tarping in Pensacola, FL</a></li>
           <li><a href="/storm-debris-clearing">Storm Debris Removal</a></li>
@@ -3920,7 +3957,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -3950,7 +3987,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>Wind: missing, creased or lifted shingles; damage concentrates at edges and the ridge</li>
             <li>Hail: granule loss, bruised shingles, dented vents and metal trim</li>
@@ -3959,13 +3996,13 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>Whichever caused it, our tarping crews photograph what they find so your records show the damage clearly.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/roof-tarping">Roof Tarping in Pensacola, FL</a></li>
           <li><a href="/emergency-storm-tarping">Emergency Roof Tarping in Pensacola, FL</a></li>
@@ -3973,7 +4010,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -4003,7 +4040,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>Day one work: photos, tarping for mitigation, and filing the claim</li>
             <li>Adjuster inspection: be there if you can, with your photos and the crew's invoice ready</li>
@@ -4012,13 +4049,13 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>While your claim moves, our tarping keeps the house dry and your documentation complete.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/roof-tarping">Roof Tarping in Pensacola, FL</a></li>
           <li><a href="/faq">FAQ — roof claim questions</a></li>
@@ -4026,7 +4063,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -4056,7 +4093,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>Age matters: storm damage on an old roof often tips the decision to replacement</li>
             <li>One slope vs. several: widespread damage rarely pencils out as spot repair</li>
@@ -4065,13 +4102,13 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>First Coast Haul handles the temporary protection side; your roofer handles the permanent call — our crews give you an honest read on what they see.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/roof-tarping">Roof Tarping in Pensacola, FL</a></li>
           <li><a href="/emergency-storm-tarping">Emergency Roof Tarping in Pensacola, FL</a></li>
@@ -4079,7 +4116,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -4109,7 +4146,7 @@
     <div class="wrap">
       <div class="cols">
         <div class="card">
-          <h3>The short version</h3>
+          <h2>The short version</h2>
           <ul class="ticks">
             <li>Temporary cover: hours, stops the loss, not a repair</li>
             <li>Repair: right when damage is local and the rest of the roof is sound</li>
@@ -4118,13 +4155,13 @@
           </ul>
         </div>
         <div class="card">
-          <h3>How First Coast Haul can help</h3>
+          <h2>How First Coast Haul can help</h2>
           <p>Start with the cover — our leak cover-up and tarping crews secure the roof and tell you honestly what they found up there.</p>
           <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
         </div>
       </div>
       <div class="related">
-        <h3>Related services</h3>
+        <h2>Related services</h2>
         <ul>
           <li><a href="/leak-cover-ups">Roof Leak Repair &amp; Cover-ups</a></li>
           <li><a href="/emergency-storm-tarping">Emergency Roof Tarping in Pensacola, FL</a></li>
@@ -4132,7 +4169,7 @@
         </ul>
       </div>
       <div class="page-cta">
-        <h3>Get it priced, free</h3>
+        <h2>Get it priced, free</h2>
         <p>Free on-site estimates across Pensacola and Northwest Florida — the price in writing before any work starts.</p>
         <a class="tel" href="tel:+18505550147">(850) 555-0147</a>
         <div class="row">
@@ -4148,12 +4185,12 @@
 <footer class="site">
   <div class="wrap">
     <div>
-      <h3>First Coast Haul</h3>
+      <h2>First Coast Haul</h2>
       <p>Demolition, junk hauling and emergency roof tarping for homeowners, landlords, realtors and contractors across Northwest Florida — interior demo, structure and concrete removal, furniture and cleanouts, and storm tarping.</p>
       <p>First Coast Haul is a referral service: requests are matched with independent local partner contractors who price and perform the work. Confirm your contractor's license and insurance before work begins.</p>
     </div>
     <div>
-      <h3>Services</h3>
+      <h2>Services</h2>
       <ul>
         <li><a href="/demolition">Demolition + Disposal in Northwest Florida</a></li>
         <li><a href="/interior-demolition">Interior demolition in Pensacola</a></li>
@@ -4168,7 +4205,7 @@
       </ul>
     </div>
     <div>
-      <h3>Contact</h3>
+      <h2>Contact</h2>
       <ul>
         <li>Call / text: <a href="tel:+18505550147">(850) 555-0147</a></li>
         <li>Email: <a href="mailto:info@xyz.com">info@xyz.com</a></li>
@@ -4176,7 +4213,7 @@
       </ul>
     </div>
     <div>
-      <h3>Hours</h3>
+      <h2>Hours</h2>
       <ul>
         <li>Mon–Sun: 7:00am – 7:00pm</li>
         <li>Same-day pickup when available</li>
@@ -4305,7 +4342,7 @@
       'emergency-roof-repair-vs-replacement': 'Emergency Roof Repair vs. Replacement — How to Decide | First Coast Haul'
     };
     var descriptions = {
-      'home': 'Junk removal in Pensacola, FL — best-rated local crews for same-day, affordable junk removal, demolition and emergency roof tarping across Northwest Florida. Free on-site estimates. Call (850) 555-0147.',
+      'home': 'Junk removal, demolition & emergency roof tarping in Pensacola & Northwest Florida. Free on-site estimates, same-day pickup when available. Call (850) 555-0147.',
       'services': 'Demolition, junk hauling and roof tarping in Pensacola, FL — plus piano, boat, e-waste and scrap metal removal and curbside junk pickup. Free estimates — call (850) 555-0147.',
       'how': 'How junk removal and demolition works with First Coast Haul: book, get a free on-site estimate with the price in writing, and the crew hauls it away. Pensacola & Northwest Florida — (850) 555-0147.',
       'quote': 'Get a free estimate for junk removal in Pensacola, FL — junk removal quotes, demolition quotes and roof tarping free estimates with no obligation. Call or text (850) 555-0147.',
@@ -4377,15 +4414,18 @@
       if (prev) prev.parentNode.removeChild(prev);
       var page = document.querySelector('.page[data-page="' + route + '"]');
       if (!page) return;
+      var graph = [];
       var sName = page.getAttribute('data-service-name');
-      if (!sName) return;
-      var graph = [{
-        '@type': 'Service',
-        'name': sName,
-        'description': page.getAttribute('data-service-desc') || '',
-        'provider': { '@type': 'LocalBusiness', 'name': 'First Coast Haul', 'telephone': '+1-850-555-0147', 'email': 'info@xyz.com' },
-        'areaServed': 'Northwest Florida'
-      }];
+      if (sName) {
+        graph.push({
+          '@type': 'Service',
+          'name': sName,
+          'description': page.getAttribute('data-service-desc') || '',
+          'provider': { '@type': 'LocalBusiness', '@id': SITE + '/#business', 'name': 'First Coast Haul', 'telephone': '+1-850-555-0147', 'email': 'info@xyz.com' },
+          'areaServed': 'Northwest Florida',
+          'url': SITE + pathFor(route)
+        });
+      }
       var faqs = [];
       var dets = page.querySelectorAll('.faq details');
       for (var i = 0; i < dets.length; i++) {
@@ -4400,6 +4440,20 @@
         }
       }
       if (faqs.length) graph.push({ '@type': 'FAQPage', 'mainEntity': faqs });
+      var crumbs = page.querySelector('.crumbs');
+      if (crumbs) {
+        var items = [];
+        var pos = 1;
+        var clinks = crumbs.querySelectorAll('a');
+        for (var k = 0; k < clinks.length; k++) {
+          var chref = clinks[k].getAttribute('href');
+          items.push({ '@type': 'ListItem', 'position': pos++, 'name': clinks[k].textContent.replace(/\s+/g, ' ').trim(), 'item': chref === '/' ? SITE + '/' : SITE + chref });
+        }
+        var lastCrumb = crumbs.querySelector('span:not([aria-hidden])');
+        if (lastCrumb) items.push({ '@type': 'ListItem', 'position': pos++, 'name': lastCrumb.textContent.replace(/\s+/g, ' ').trim() });
+        if (items.length > 1) graph.push({ '@type': 'BreadcrumbList', 'itemListElement': items });
+      }
+      if (!graph.length) return;
       var s = document.createElement('script');
       s.type = 'application/ld+json';
       s.id = 'page-jsonld';
@@ -4427,6 +4481,16 @@
       document.title = titles[route];
       if (descEl) descEl.setAttribute('content', descriptions[route] || defaultDesc);
       if (canonEl) canonEl.setAttribute('href', SITE + pathFor(route));
+      var ogT = document.querySelector('meta[property="og:title"]');
+      if (ogT) ogT.setAttribute('content', titles[route]);
+      var ogD = document.querySelector('meta[property="og:description"]');
+      if (ogD) ogD.setAttribute('content', descriptions[route] || defaultDesc);
+      var ogU = document.querySelector('meta[property="og:url"]');
+      if (ogU) ogU.setAttribute('content', SITE + pathFor(route));
+      var twT = document.querySelector('meta[name="twitter:title"]');
+      if (twT) twT.setAttribute('content', titles[route]);
+      var twD = document.querySelector('meta[name="twitter:description"]');
+      if (twD) twD.setAttribute('content', descriptions[route] || defaultDesc);
       setSchema(route);
       if (anchor) {
         var target = document.getElementById(anchor);
